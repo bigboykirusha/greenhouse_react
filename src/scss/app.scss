@@ -1,0 +1,19 @@
+
+@import './variables.scss';
+@import './libs/normalize.scss';
+
+body {
+  background-color: $background;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: calc(100vw - 40px);
+  height: calc((100vh*2) - 40px);
+  background-color: $black;
+  margin: 20px auto;
+}
+
+.content {
+  
+}

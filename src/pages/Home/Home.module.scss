@@ -1,0 +1,131 @@
+@import "../../scss/_variables";
+
+.home {
+  background-color: $white;
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $black;
+  color: $white;
+
+  @media (max-width: 1160px) {
+    height: calc(100vh - 70px);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+    padding-top: 70px;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      padding-top: 50px;
+    }
+  }
+
+  &__logo {
+    height: 600px;
+    margin: 0 auto;
+
+    @media (max-width: 1440px) {
+      height: 500px;
+    }
+
+    @media (max-width: 1160px) {
+      height: 400px;
+    }
+
+    @media (max-width: 991px) {
+      height: 300px;
+    }
+
+    @media (max-width: 481px) {
+      display: none;
+    }
+  }
+
+  &__block {
+    width: 40%;
+
+    @media (max-width: 1440px) {
+      width: 50%;
+    }
+
+    @media (max-width: 1160px) {
+      width: 60%;
+    }
+
+    @media (max-width: 991px) {
+      width: 90%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 481px) {
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-size: 90px;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    font-family: DM Mono;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: $white;
+
+    @media (max-width: 1440px) {
+      font-size: 70px;
+    }
+
+    @media (max-width: 1160px) {
+      font-size: 62px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 54px;
+    }
+
+    @media (max-width: 481px) {
+      font-size: 46px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 27px;
+    line-height: 1.5;
+    color: $white;
+    @media (max-width: 1440px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: 1160px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 991px) {
+      font-size: 18px;
+    }
+  }
+
+  &__swipe {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-size: 18px;
+  }
+
+  &__arrow {
+  }
+}
