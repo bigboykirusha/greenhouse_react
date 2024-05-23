@@ -7,6 +7,7 @@ import Qa from "./pages/Qa/Qa";
 import Contacts from "./pages/Contacts/Contacts";
 import React, { Suspense } from "react";
 function App() {
+  
   return (
     <Routes>
       <Route path={"/"} element={<MainLayout />}>
