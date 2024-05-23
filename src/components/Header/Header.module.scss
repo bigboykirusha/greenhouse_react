@@ -1,15 +1,18 @@
 @import '../../scss/_variables';
 
 .header {
+  position: fixed;
+  top: 20px;
   background-color: $black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-bottom: 20px;
+  width: calc(100% - 40px);
 
   &__logo {
     margin: auto 0;
-
+    width: 60px;
     h1 {
       cursor: pointer;
       font-size: 24px;
@@ -36,7 +39,7 @@
   }
 
   &__buttonBox {
-
+    width: 60px;
   }
 }
 

@@ -9,11 +9,9 @@ body {
 
 .wrapper {
   width: calc(100vw - 40px);
-  height: calc((100vh*2) - 40px);
+  height: calc((100vh*2) - 20px);
   background-color: $black;
   margin: 20px auto;
-}
-
-.content {
-  
+  margin-top: 70px;
+  position: relative;
 }

@@ -14,28 +14,35 @@ const Header = () => {
     // Добавьте вашу логику здесь
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <header className={styles.header} >
-        <Link to="/home/">
-          <div className={styles.header__logo}>
-              <h1>RE-R</h1>
-          </div>
+      <Link to="/home" onClick={scrollToTop}>
+        <div className={styles.header__logo}>
+          <h1>RE-R</h1>
+        </div>
+      </Link>
+      <div className={styles.header__navbar}>
+        <Link to="/QA" className={styles.header__button}>
+          QA
         </Link>
-        <div className={styles.header__navbar}>
-          <Link to="/QA" className={styles.header__button}>
-            QA
-          </Link>
-          <Link to="/Contacts" className={styles.header__button}>
-            Contacts
-          </Link>
+        <Link to="/Contacts" className={styles.header__button}>
+          Contacts
+        </Link>
+      </div>
+      <div className={styles.header__formBox}>
+        <div className={`${styles.header__buttonBox} ${styles.languageSelector}`}>
+          <div id="btn"></div>
+          <button type="button" className={`${styles.toggleBtn} ${styles.active}`} id="btnEN" onClick={leftClick}>EN</button>
+          <button type="button" className={styles.toggleBtn} id="btnRU" onClick={rightClick}>RU</button>
         </div>
-        <div className={styles.header__formBox}>
-          <div className={`${styles.header__buttonBox} ${styles.languageSelector}`}>
-            <div id="btn"></div>
-            <button type="button" className={`${styles.toggleBtn} ${styles.active}`} id="btnEN" onClick={leftClick}>EN</button>
-            <button type="button" className={styles.toggleBtn} id="btnRU" onClick={rightClick}>RU</button>
-          </div>
-        </div>
+      </div>
     </header>
   );
 };
