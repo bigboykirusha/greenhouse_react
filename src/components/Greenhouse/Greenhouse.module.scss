@@ -1,7 +1,7 @@
 @import '../../scss/_variables';
 
 .greenhouse {
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100 - 20px); // Высота зависит от переменной --vh
   padding-top: 70px;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding-top: 30%; /* Пропорциональное соотношение, например 65% от ширины */
+  padding-top: 30%; // Пропорциональное соотношение
   background-color: transparent;
 }
 
@@ -20,7 +20,6 @@
     position: relative;
     z-index: 10;
   }
-  
 }
 
 .animationContainer, .layer {
@@ -37,10 +36,3 @@
   background-color: #000000;
 }
 
-.textInformation {
-  display: grid; /* Используем грид для размещения карточек */
-  grid-template-columns: repeat(6, 1fr); /* Шесть столбцов на больших экранах */
-  gap: 10px; /* Расстояние между карточками */
-  padding-top: 10px; /* Внутренний отступ */
-  margin: 0; /* Убираем внешние отступы */
-}
