@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Qa from "./pages/Qa/Qa";
 import Contacts from "./pages/Contacts/Contacts";
 import React, { Suspense } from "react";
+import "animate.css/animate.compat.css"
 function App() {
   
   return (

@@ -26,7 +26,6 @@ const Card: React.FC<CardProps> = ({ title, description, images, setActive, inde
          className={`${styles.card} ${isActive ? styles.active : ''}`}
          onMouseEnter={handleMouseEnter}
          onMouseLeave={handleMouseLeave}
-         style={{ opacity: isActive ? 1 : 0.5 }}
       >
          <div className={styles.containerIcons}>
             {Array.isArray(images) ? (

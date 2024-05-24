@@ -40,9 +40,11 @@
 }
 
 .layer {
-
+  filter: brightness(80%);
+  transition: all 0.3s ease-in-out;
   &.active {
     // добавьте стили для подсветки
     filter: brightness(150%);
+    transform: scale(1.05);
   }
 }

@@ -5,6 +5,7 @@ import logo from "../../assest/img/bamboo.png";
 import bg from "../../assest/img/bgpc.png";
 import downButton from "../../assest/icons/downButton.svg";
 import Greenhouse from "../../components/Greenhouse/Greenhouse";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Home: React.FC = () => {
 
@@ -30,8 +31,12 @@ const Home: React.FC = () => {
       <div className={styles.home}>
         <div className={styles.home__section}>
           <div className={styles.home__block}>
-            <h1 className={styles.home__title}>Smart<br />greenhouses</h1>
+            <ScrollAnimation animateIn="fadeInUp">
+              <h1 className={styles.home__title}>Smart<br />greenhouses</h1>
+            </ScrollAnimation>
+            <ScrollAnimation animateIn="fadeInUp" delay={0.1*1000}>
             <p className={styles.home__subtitle}>Grow your garden smarter with our Smart Greenhouses. Packed with clever tech to keep your plants happy, our greenhouses make it easy to maintain the perfect environment. Your greens will be healthier, and you'll have more time to relax and enjoy. It's all about getting the best from nature, effortlessly. Welcome to your garden's bright future!</p>
+            </ScrollAnimation>
           </div>
         </div>
         <div className={styles.home__logocontainer}>

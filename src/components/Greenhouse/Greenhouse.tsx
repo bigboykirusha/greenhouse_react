@@ -83,7 +83,7 @@ const Greenhouse: React.FC = () => {
             renderer: "svg",
             loop: true,
             autoplay: true,
-            animationData: animationData, // Проверьте путь к файлу JSON
+            animationData: animationData,
         });
     }
 }, []);
@@ -92,10 +92,10 @@ const Greenhouse: React.FC = () => {
     <div className={styles.greenhouse}>
       <section className={styles.interactiveSection}>
         <div id="animation-container" className={styles.animationContainer}></div>
-        <img id="pump" src={pumpAndPipes} className={`${styles.layer} ${activeIndex === 0 ? styles.active : ''}`} data-cell="watering" />
+        <img id="pump" src={pumpAndPipes} className={`${styles.layer} ${activeIndex === 3 ? styles.active : ''}`} data-cell="watering" />
         <img src={conditioner} className={`${styles.layer} ${activeIndex === 1 ? styles.active : ''}`} data-cell="ventilation" />
         <img src={dehumidifier} className={`${styles.layer} ${activeIndex === 2 ? styles.active : ''}`} data-cell="co2" />
-        <img src={lighting} className={`${styles.layer} ${activeIndex === 3 ? styles.active : ''}`} data-cell="light" />
+        <img src={lighting} className={`${styles.layer} ${activeIndex === 0 ? styles.active : ''}`} data-cell="light" />
       </section>
       {/* Pass activeIndex as a prop to TextInformation */}
       <TextInformation cards={cardsData} setActive={handleSetActive} activeIndex={activeIndex} />
