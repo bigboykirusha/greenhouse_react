@@ -13,11 +13,13 @@
   &__logo {
     margin: auto 0;
     width: 60px;
+
     h1 {
       cursor: pointer;
+      font-family: 'DM Mono';
       font-size: 24px;
       color: $white;
-      font-weight: 400;
+      font-weight: 500;
     }
   }
 
@@ -32,25 +34,29 @@
 
   &__button {
     color: $white;
+    font-family: 'DM Mono';
   }
 
   &__formBox {
-
+    width: 60px;
+    display: flex;
+    justify-content: flex-end; // Исправлено: "end" вместо "end"
+    align-items: center;
   }
 
   &__buttonBox {
-    width: 60px;
+    // Пусто
   }
 }
 
 .languageSelector {
-
+  // Стили для селектора языка
 }
 
 .toggleBtn {
-
+  // Стили для кнопки переключения
 }
 
 .active {
-
+  // Стили для активного элемента
 }

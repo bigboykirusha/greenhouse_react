@@ -9,11 +9,6 @@ const Header = () => {
     // Добавьте вашу логику здесь
   };
 
-  const rightClick = () => {
-    console.log("RU button clicked");
-    // Добавьте вашу логику здесь
-  };
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -25,7 +20,7 @@ const Header = () => {
     <header className={styles.header} >
       <Link to="/home" onClick={scrollToTop}>
         <div className={styles.header__logo}>
-          <h1>RE-R</h1>
+          <h1>RE-E</h1>
         </div>
       </Link>
       <div className={styles.header__navbar}>
@@ -38,9 +33,7 @@ const Header = () => {
       </div>
       <div className={styles.header__formBox}>
         <div className={`${styles.header__buttonBox} ${styles.languageSelector}`}>
-          <div id="btn"></div>
           <button type="button" className={`${styles.toggleBtn} ${styles.active}`} id="btnEN" onClick={leftClick}>EN</button>
-          <button type="button" className={styles.toggleBtn} id="btnRU" onClick={rightClick}>RU</button>
         </div>
       </div>
     </header>

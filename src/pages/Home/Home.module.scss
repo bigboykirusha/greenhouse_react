@@ -6,12 +6,11 @@
 }
 
 .home {
-  height: calc(100vh - 70px);
+  height: calc(var(--vh, 1vh) * 100 - 70px); // Высота зависит от переменной --vh
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
 
   &__section {
     z-index: 5;
@@ -45,7 +44,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-
   }
 
   &__block {
@@ -80,8 +78,8 @@
     line-height: 1.1;
     letter-spacing: -1px;
     text-transform: uppercase;
-    font-family: DM Mono;
-    font-weight: 700;
+    font-family: 'DM Mono';
+    font-weight: 500;
     margin-bottom: 20px;
     color: $white;
 
@@ -106,6 +104,7 @@
     font-size: 27px;
     line-height: 1.5;
     color: $white;
+
     @media (max-width: 1440px) {
       font-size: 24px;
     }

@@ -7,7 +7,23 @@ import downButton from "../../assest/icons/downButton.svg";
 import Greenhouse from "../../components/Greenhouse/Greenhouse";
 
 const Home: React.FC = () => {
+
   const ghRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function setVhProperty() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+
+    setVhProperty(); // Вызываем функцию при монтировании компонента
+
+    window.addEventListener('resize', setVhProperty); // Обновляем при изменении размера окна
+
+    return () => {
+      window.removeEventListener('resize', setVhProperty); // Удаляем слушатель при размонтировании компонента
+    };
+  }, []);
 
   return (
     <div className={styles.root}>
