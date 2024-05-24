@@ -54,8 +54,8 @@ const Header = () => {
         <div className={styles.fullscreenMenu}>
           <div className={styles.fullscreenMenu__content}>
             <Link to="/home" className={styles.fullscreenMenu__link} onClick={closeMenu}>Home</Link>
-            <Link to="/qa" className={styles.fullscreenMenu__link} onClick={closeMenu}>QA</Link>
             <Link to="/contacts" className={styles.fullscreenMenu__link} onClick={closeMenu}>Contacts</Link>
+            <Link to="/qa" className={styles.fullscreenMenu__link} onClick={closeMenu}>QA</Link>
           </div>
         </div>
       )}

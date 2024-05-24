@@ -98,7 +98,7 @@
   }
 
   &.active .bar1 {
-    transform: rotate(45deg) translate(5px, 5px); /* Adjust translate values for proportion */
+    transform: rotate(45deg) translate(7px, 7px);
   }
 
   &.active .bar2 {
@@ -106,7 +106,7 @@
   }
 
   &.active .bar3 {
-    transform: rotate(-45deg) translate(5px, -5px); /* Adjust translate values for proportion */
+    transform: rotate(-45deg) translate(7px, -7px);
   }
 }
 
