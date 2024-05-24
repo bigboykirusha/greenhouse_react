@@ -1,14 +1,13 @@
-// Greenhouse.tsx
+import React, { useEffect, useRef, useState } from "react";
+import Lottie from 'lottie-web';
+import styles from "./Greenhouse.module.scss";
+
 import pumpAndPipes from "../../assest/img/pumpAndPipes.png";
 import conditioner from "../../assest/img/conditioner.png";
 import dehumidifier from "../../assest/img/dehumidifier.png";
 import lighting from "../../assest/img/lighting.png";
 import animationData from "../../assest/animation/data4.json";
-import TextInformation from '../TextInformation/TextInformation';
-import React, { useEffect } from "react";
-import Lottie from 'lottie-web';
-import { Link, useLocation } from "react-router-dom";
-import styles from "./Greenhouse.module.scss";
+
 import lightIcon from "../../assest/icons/light.svg";
 import spectrumIcon from "../../assest/icons/spectrumIcon.svg";
 import fanIcon from "../../assest/icons/fanIcon.svg";
@@ -19,8 +18,15 @@ import mobileIcon from "../../assest/icons/mobileIson.svg";
 import wifiIcon from "../../assest/icons/wifi.png";
 import idCamIcon from "../../assest/icons/idCamIcon.svg";
 
-const Greenhouse: React.FC = () => {
+import TextInformation from '../TextInformation/TextInformation';
 
+const Greenhouse: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const handleSetActive = (index: number | null) => {
+    setActiveIndex(index);
+  };
+  
   const cardsData = [
     {
       title: 'Свет',
@@ -54,6 +60,7 @@ const Greenhouse: React.FC = () => {
     },
   ];
 
+
   useEffect(() => {
     const setVhProperty = () => {
       const vh = window.innerHeight * 0.01;
@@ -71,31 +78,29 @@ const Greenhouse: React.FC = () => {
   useEffect(() => {
     const animationContainer = document.getElementById("animation-container");
     if (animationContainer) {
-      Lottie.loadAnimation({
-        container: animationContainer,
-        renderer: "svg",
-        loop: true,
-        autoplay: true,
-        animationData: animationData, // передаем загруженные данные анимации
-      });
+        Lottie.loadAnimation({
+            container: animationContainer,
+            renderer: "svg",
+            loop: true,
+            autoplay: true,
+            animationData: animationData, // Проверьте путь к файлу JSON
+        });
     }
-  }, []);
+}, []);
 
   return (
     <div className={styles.greenhouse}>
       <section className={styles.interactiveSection}>
-        {/* Контейнер для анимации */}
         <div id="animation-container" className={styles.animationContainer}></div>
-        {/* Изображения */}
-        <img id="pump" src={pumpAndPipes} className={styles.layer} data-cell="watering" />
-        <img src={conditioner} className={styles.layer} data-cell="ventilation" />
-        <img src={dehumidifier} className={styles.layer} data-cell="co2" />
-        <img src={lighting} className={styles.layer} data-cell="light" />
+        <img id="pump" src={pumpAndPipes} className={`${styles.layer} ${activeIndex === 0 ? styles.active : ''}`} data-cell="watering" />
+        <img src={conditioner} className={`${styles.layer} ${activeIndex === 1 ? styles.active : ''}`} data-cell="ventilation" />
+        <img src={dehumidifier} className={`${styles.layer} ${activeIndex === 2 ? styles.active : ''}`} data-cell="co2" />
+        <img src={lighting} className={`${styles.layer} ${activeIndex === 3 ? styles.active : ''}`} data-cell="light" />
       </section>
-      <TextInformation cards={cardsData} />
+      {/* Pass activeIndex as a prop to TextInformation */}
+      <TextInformation cards={cardsData} setActive={handleSetActive} activeIndex={activeIndex} />
     </div>
   );
 };
 
 export default Greenhouse;
-

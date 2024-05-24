@@ -4,9 +4,7 @@
   display: grid; /* Используем грид для размещения карточек */
   grid-template-columns: repeat(6, 1fr); /* Шесть столбцов на больших экранах */
   gap: 10px; /* Расстояние между карточками */
-  padding-top: 10px; /* Внутренний отступ */
   margin: 0; /* Убираем внешние отступы */
-  margin-bottom: 20px;
 
   @media (max-width: 1440px) {
     grid-template-columns: repeat(3, 1fr);

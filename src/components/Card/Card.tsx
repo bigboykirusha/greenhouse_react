@@ -1,24 +1,39 @@
-// Card.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Card.module.scss';
 
 interface CardProps {
    title: string;
    description: string;
-   images: string | string[]; // Определите поле image как строку или массив строк
+   images: string | string[]; // Define the image field as a string or an array of strings
+   setActive: (index: number | null) => void; // Add setActive function
+   index: number; // Add index
+   activeIndex: number | null; // Add activeIndex
 }
 
-const Card: React.FC<CardProps> = ({ title, description, images }) => {
+const Card: React.FC<CardProps> = ({ title, description, images, setActive, index, activeIndex }) => {
+   const isActive = activeIndex === index;
+
+   const handleMouseEnter = () => {
+      setActive(index);
+   };
+
+   const handleMouseLeave = () => {
+      setActive(null);
+   };
+
    return (
-      <div className={styles.card}>
+      <div
+         className={`${styles.card} ${isActive ? styles.active : ''}`}
+         onMouseEnter={handleMouseEnter}
+         onMouseLeave={handleMouseLeave}
+         style={{ opacity: isActive ? 1 : 0.5 }}
+      >
          <div className={styles.containerIcons}>
             {Array.isArray(images) ? (
-               // Если images является массивом, отобразите несколько изображений
-               images.map((image, index) => (
-                  <img key={index} src={image} alt={`Icon ${index}`} />
+               images.map((image, idx) => (
+                  <img key={idx} src={image} alt={`Icon ${idx}`} />
                ))
             ) : (
-               // Если images является строкой, отобразите одно изображение
                <img src={images} alt="Icon" />
             )}
          </div>
@@ -29,4 +44,3 @@ const Card: React.FC<CardProps> = ({ title, description, images }) => {
 };
 
 export default Card;
-

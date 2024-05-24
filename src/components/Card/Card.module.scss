@@ -1,85 +1,91 @@
 @import "../../scss/_variables";
 
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); // адаптивные столбцы
+  gap: 20px;
+  align-items: start;
+}
+
 .card {
-   background-color: $black;
-   border-radius: 10px;
-   padding: 20px;
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   text-align: left;
-   min-height: 150px;
-   max-height: 250px;   
-   
-   .containerIcons {
-     display: flex;
-     gap: 15px;
-     margin-bottom: 15px;
-   }
- 
-   img {
-     width: auto;
-     height: 50px;
-     margin-bottom: 10px;
-   }
- 
-   h2, p {
-     font-size: 14px;
-     color: $white;
-     margin: 5px 0;
-   }
- 
-   h2 {
-      font-size: 18px;
-      line-height: 1.2; /* добавлено свойство line-height */
+  background-color: $black;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  min-height: 130px;
+  height: fit-content; // чтобы высота была равна содержимому
+  max-height: 250px; 
+  
+   &.active {
+      opacity: 1;
    }
 
-   @media (max-width: 1440px) {
-      padding: 15px;
-      img {
-         height: 40px;
-         margin-bottom: 8px;
-      }
-      h2 {
-         font-size: 16px;
-         margin: 8px 0;
-      }
-      p {
-         font-size: 12px;
-         margin: 3px 0 0;
-      }
-   }
+  .containerIcons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
 
-   @media (max-width: 1024px) {
-      padding: 10px;
-      img {
-         height: 30px;
-         margin-bottom: 6px;
-      }
-      h2 {
-         font-size: 14px;
-         margin: 6px 0;
-      }
-      p {
-         font-size: 10px;
-         margin: 2px 0 0;
-      }
-   }
+  img {
+    width: auto;
+    height: 50px;
+    margin-bottom: 10px;
+  }
 
-   @media (max-width: 768px) {
-      padding: 8px;
-      img {
-         height: 20px;
-         margin-bottom: 4px;
-      }
-      h2 {
-         font-size: 12px;
-         margin: 4px 0;
-      }
-      p {
-         font-size: 8px;
-         margin: 1px 0 0;
-      }
-   }
- }
- 
+  h2, p {
+    font-size: 14px;
+    color: $white;
+    margin-bottom: 5px ;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 1.2; // добавлено свойство line-height
+  }
+
+  @media (max-width: 1440px) {
+    padding: 15px;
+    img {
+      height: 40px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 16px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 10px;
+    min-height: 120px;
+    img {
+      height: 30px;
+      margin-bottom: 6px;
+    }
+    h2 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px;
+    img {
+      height: 20px;
+      margin-bottom: 4px;
+    }
+    h2 {
+      font-size: 12px;
+    }
+    p {
+      font-size: 8px;
+    }
+  }
+}
