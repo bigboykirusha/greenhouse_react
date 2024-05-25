@@ -4,6 +4,7 @@ import logo from "../../assest/img/bgmobile.png";
 import bg from "../../assest/img/bgpc.png";
 import downButton from "../../assest/icons/downButton.svg";
 import Greenhouse from "../../components/Greenhouse/Greenhouse";
+import Swiper from "../../components/Swiper/Swiper";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const Home: React.FC = () => {
@@ -43,14 +44,7 @@ const Home: React.FC = () => {
             <img className={styles.home__logo} src={logo} alt="" />
           </div>
         </div>
-        <div onClick={() => {
-          ghRef.current?.scrollIntoView({
-            behavior: 'smooth'
-          })
-        }} className={styles.home__swipe}>
-          <div className={styles.home__text}>Explore Green Tech</div>
-          <img className={styles.home__arrow} src={downButton} alt="" />
-        </div>
+        <Swiper targetRef={ghRef} text="Explore Green Tech" icon={downButton} /> {/* Используем наш новый компонент */}
         <img className={styles.home__picture} src={bg} alt="" />
       </div>
       <div ref={ghRef}>

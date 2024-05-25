@@ -8,11 +8,10 @@ interface CardData {
    image: string | string[];
 }
 
-// In TextInformation.tsx, update the TextInformationProps interface to include activeIndex
 interface TextInformationProps {
    cards: CardData[];
-   setActive: (index: number | null) => void; // Keep setActive in props
-   activeIndex: number | null; // Add activeIndex
+   setActive: (index: number | null) => void;
+   activeIndex: number | null;
 }
 
 const TextInformation: React.FC<TextInformationProps> = ({ cards, setActive, activeIndex }) => {

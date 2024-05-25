@@ -98,7 +98,7 @@
   }
 
   &.active .bar1 {
-    transform: rotate(45deg) translate(7px, 7px);
+    transform: rotate(45deg) translate(7.5px, 7.5px);
   }
 
   &.active .bar2 {
@@ -106,7 +106,7 @@
   }
 
   &.active .bar3 {
-    transform: rotate(-45deg) translate(7px, -7px);
+    transform: rotate(-45deg) translate(7.5px, -7.5px);
   }
 }
 

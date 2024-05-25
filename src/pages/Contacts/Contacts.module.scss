@@ -1,0 +1,104 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  height: calc(var(--vh, 1vh) * 100 - 90px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
+  color: white;
+
+  &__map {
+    flex: 1;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (max-width: 520px) {
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+
+    iframe {
+      border-radius: 5px;
+      border: none;
+      filter: grayscale(60%);
+    }
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 40px;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (max-width: 520px) {
+      padding-left: 0;
+      padding-right: 10px;
+    }
+  }
+
+  &__cardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding-bottom: 20px;
+
+    div:nth-child(1),
+    div:nth-child(2),
+    div:nth-child(3) {
+      grid-column: span 2;
+    }
+
+    div:nth-child(4),
+    div:nth-child(5) {
+      grid-row: 2;
+      grid-column: span 3;
+    }
+
+    @media (max-width: 1024px) {
+      gap: 30px;
+      column-gap: 50px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 520px) {
+      grid-template-columns: repeat(2, 1fr); /* При малых экранах переходим на две колонки */
+      padding-bottom: 10px;
+      gap: 20px;
+    }
+
+    @media (max-width: 520px) {
+      div:nth-child(1),
+      div:nth-child(2),
+      div:nth-child(3),
+      div:nth-child(4),
+      div:nth-child(5) {
+        grid-column: auto; /* Сброс стилей для мобильных устройств */
+        grid-row: auto; /* Сброс стилей для мобильных устройств */
+      }
+
+      div:nth-child(5) {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    text-align: center;
+    white-space: nowrap; /* Запрещаем перенос заголовка */
+    font-weight: 500;
+
+    @media (max-width: 1440px) {
+      font-size: 18px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 14px;
+    }
+  }
+}

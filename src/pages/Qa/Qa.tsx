@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import styles from "../components/NotFoundBlock/NotFoundBlock.module.scss";
+import styles from "./Qa.module.scss";
 
 const Qa: React.FC = () => {
   return (
-   <div>
+   <div className={styles.root}>
       <h1>QA Page</h1>
    </div>
   );
