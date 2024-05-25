@@ -8,6 +8,10 @@
   text-align: left;
   transition: all 0.3s ease-in-out;
 
+  p {
+    opacity: 0.7;
+  }
+
   h2,
   p {
     font-size: 22px;
@@ -15,6 +19,7 @@
     margin-bottom: 5px;
     cursor: default;
     line-height: normal;
+    font-family: 'Montserrat';
   }
 
   @media (max-width: 1440px) {
@@ -29,9 +34,5 @@
     p {
       font-size: 14px;
     }
-  }
-
-  @media (max-width: 520px) {
-    padding-left: 10px;
   }
 }
