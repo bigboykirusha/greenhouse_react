@@ -3,10 +3,10 @@
   flex-direction: column;
   height: calc(var(--vh, 1vh) * 100 - 91px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
   color: white;
+  overflow: hidden;
 
   &__map {
     position: relative;
-    flex: 1;
     margin-bottom: 30px;
     height: 100%;
     width: 100%;
