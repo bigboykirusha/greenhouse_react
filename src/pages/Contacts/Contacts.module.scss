@@ -10,8 +10,9 @@
   &__map {
     position: relative;
     margin-bottom: 30px;
-    height: calc(100% - 91px);
+    height: min-content;
     width: 100%;
+    height: calc(100% - 91px);
     overflow: hidden;
     border-radius: 5px;
 
@@ -21,8 +22,8 @@
       border: none;
       filter: grayscale(20%);
       width: 100%;
-      height: calc(100% - 91px);
-      position: absolute;
+      height: 100%;
+      
     }
   }
 
