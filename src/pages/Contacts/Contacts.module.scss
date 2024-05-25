@@ -10,7 +10,7 @@
   &__map {
     position: relative;
     margin-bottom: 30px;
-    height: 100%;
+    height: calc(100% - 91px);
     width: 100%;
     overflow: hidden;
     border-radius: 5px;
@@ -21,7 +21,7 @@
       border: none;
       filter: grayscale(20%);
       width: 100%;
-      height: 100%;
+      height: calc(100% - 91px);
       position: absolute;
     }
   }
