@@ -10,20 +10,16 @@
   &__map {
     position: relative;
     margin-bottom: 30px;
-    height: min-content;
-    width: 100%;
-    height: calc(100% - 91px);
     overflow: hidden;
     border-radius: 5px;
+    height: 100%;
 
     iframe {
       border-radius: 5px;
       overflow: hidden;
       border: none;
       filter: grayscale(20%);
-      width: 100%;
       height: 100%;
-      
     }
   }
 
