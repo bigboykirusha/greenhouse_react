@@ -1,8 +1,3 @@
-.root {
-  background-color: black;
-  color: white;
-  height: calc(100vh - 91px);
-}
 
 .contacts {
   display: flex;
@@ -10,11 +5,12 @@
   height: calc(var(--vh, 1vh) * 100 - 91px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
   color: white;
   overflow: hidden;
+  justify-content: flex-end;
 
   &__map {
     position: relative;
     margin-bottom: 30px;
-    height: 100%;
+    height: calc(var(--vh, 1vh) * 35);
     width: 100%;
     overflow: hidden;
     border-radius: 5px;
