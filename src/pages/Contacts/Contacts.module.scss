@@ -5,13 +5,19 @@
   color: white;
 
   &__map {
+    position: relative;
     flex: 1;
-    padding-bottom: 30px;
+    margin-bottom: 30px;
+    height: 100%;
+    width: 100%;
 
     iframe {
       border-radius: 5px;
       border: none;
       filter: grayscale(20%);
+      width: 100%;
+      height: 100%;
+      position: absolute;
     }
   }
 
