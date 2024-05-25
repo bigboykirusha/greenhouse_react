@@ -1,7 +1,7 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  height: calc(var(--vh, 1vh) * 100 - 111px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
+  height: calc(var(--vh, 1vh) * 100 - 91px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
   color: white;
 
   &__map {
@@ -93,6 +93,7 @@
 
     @media (max-width: 1024px) {
       font-size: 14px;
+      display: none;
     }
   }
 }
