@@ -35,4 +35,11 @@
       font-size: 14px;
     }
   }
+
+  @media (max-width: 520px) {
+    h2,
+    p {
+      font-size: 12px;
+    }
+  }
 }
