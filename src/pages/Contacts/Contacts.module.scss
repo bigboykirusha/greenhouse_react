@@ -1,3 +1,9 @@
+.root {
+  background-color: black;
+  color: white;
+  height: calc((100vh*2) - 91px);
+}
+
 .contacts {
   display: flex;
   flex-direction: column;
