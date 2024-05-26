@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Contacts.module.scss";
 import ContactsCard from "../../components/ContactsCard/ContactsCard"
+import officeData from "../../data/officeData.json"
 
 const Contacts: React.FC = () => {
 
@@ -13,41 +14,6 @@ const Contacts: React.FC = () => {
     window.addEventListener('resize', setVh);
     return () => window.removeEventListener('resize', setVh);
   }, []);
-
-  const officeData = [
-    {
-      title: 'Head Office',
-      description: `88/8 Moo 9, Green Road,<br />
-Bang Phli District,<br />
-Samut Prakan 10540,<br />
-Thailand`,
-    },
-    {
-      title: 'Contact Us',
-      description: `Email: co.th<br />
-Phone: +66 (0)2 123 4567<br />
-Fax: +66 (0)2 765 4321`,
-    },
-    {
-      title: 'Connect With Us',
-      description: `Facebook: /bigboykirusha<br />
-Twitter: @bigboykirusha<br />
-Instagram: @bigboykirusha`,
-    },
-    {
-      title: 'Legal Information',
-      description: `Company Registration No.: 0123456789<br />
-VAT ID: TH0123456789`,
-    },
-    {
-      title: 'Customer Service',
-      description: `Phone: +66 (0)2 987 6543<br />
-Hours: Monday to Friday, 9am to 5pm (ICT)`,
-    },
-  ];
-
-
-
 
   return (
     <div className={styles.contacts}>
