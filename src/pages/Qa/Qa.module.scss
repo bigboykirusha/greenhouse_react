@@ -9,48 +9,43 @@
     font-size: 40px;
     color: #fff;
     text-align: left;
-    margin-bottom: 150px;
-    margin-top: 40px;
+    margin: 40px 0;
+    font-family: 'Helvetica';
     font-weight: bold;
 
     @media (max-width: 1440px) {
-      margin-bottom: 100px;
+      margin: 30px 0;
+      padding-top: 20px;
       font-size: 32px;
     }
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
-      margin-bottom: 50px;
-      font-size: 28px;
-      margin-top: 0;
+      font-size: 24px;
+
+      margin: 20px 0;
     }
   }
 
   &__cardsContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Два столбца для ПК и планшетов */
-    gap: 50px;
-    width: 80%;
-
-    @media (max-width: 1440px) {
-      width: 100%;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Уменьшил отступ между карточками */
+    width: 100%;
 
     @media (max-width: 768px) {
-      grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
-      gap: 10px;
-      row-gap: 0;
+      gap: 0 40px;
+      grid-template-columns: repeat(auto-fit,  1fr);
     }
   }
 
   .column {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    flex: 1;
+    column-gap: 20px;
+    row-gap: 0;
 
     @media (max-width: 768px) {
-      gap: 10px;
+      column-gap: 10px;
     }
   }
 }

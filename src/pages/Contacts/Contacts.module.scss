@@ -90,10 +90,10 @@
 
   &__title {
     font-size: 22px;
-    font-family: 'Montserrat';
+    font-family: 'Helvetica';
     text-align: center;
     white-space: nowrap; /* Запрещаем перенос заголовка */
-    font-weight: 500;
+    font-weight: medium;
 
     @media (max-width: 1440px) {
       font-size: 18px;

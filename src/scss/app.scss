@@ -2,6 +2,27 @@
 @import './variables.scss';
 @import './libs/normalize.scss';
 
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/HelveticaNeueCyrRoman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/HelveticaNeueCyrMedium.ttf') format('truetype');
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('../fonts/HelveticaNeueCyrBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   background-color: $background;
   overflow: hidden;

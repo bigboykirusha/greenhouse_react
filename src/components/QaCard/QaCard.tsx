@@ -1,6 +1,8 @@
 // QaCard.tsx
 import React from 'react';
 import styles from './QaCard.module.scss';
+import minus from '../../assest/icons/minus.svg'
+import plus from '../../assest/icons/plus.svg'
 
 interface QaCardProps {
   question: string;
@@ -12,12 +14,12 @@ interface QaCardProps {
 const QaCard: React.FC<QaCardProps> = ({ question, answer, isActive, onClick }) => {
   return (
     <div className={`${styles.qaCard} ${isActive ? styles.active : ''}`} onClick={onClick}>
-      <h2>
-        {question}
-        <div className={styles.icon}>{isActive ? '−' : '+'}</div>
-      </h2>
+      <div className={styles.qaBlock}>
+        <div className={styles.qaTitle}>{question}</div>
+        <div className={styles.icon}>{isActive ? <img src={minus} alt="minus" /> : <img src={plus} alt="plus" />}</div>
+      </div>
       <div className={`${styles.content} ${isActive ? styles.activeContent : ''}`}>
-        <p dangerouslySetInnerHTML={{ __html: answer }} />
+        {answer}
       </div>
     </div>
   );
