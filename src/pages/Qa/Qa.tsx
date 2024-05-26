@@ -1,3 +1,4 @@
+// Qa.tsx
 import React, { useState, useEffect } from "react";
 import styles from "./Qa.module.scss";
 import QaCard from "../../components/QaCard/QaCard";
@@ -39,22 +40,40 @@ const Qa: React.FC = () => {
   ];
 
   const handleCardClick = (index: number) => {
-    setActiveIndex(index === activeIndex ? null : index);
+    setActiveIndex(prevIndex => {
+      // Если текущая карточка уже активна, закрываем её
+      return prevIndex === index ? null : index;
+    });
   };
+
+  const half = Math.ceil(faqData.length / 2);
 
   return (
     <div className={styles.qa}>
       <div className={styles.qa__title}>Find Your Answers</div>
       <div className={styles.qa__cardsContainer}>
-        {faqData.map((faq, index) => (
-          <QaCard
-            key={index}
-            question={faq.question}
-            answer={faq.answer}
-            isActive={index === activeIndex}
-            onClick={() => handleCardClick(index)}
-          />
-        ))}
+        <div className={styles.column}>
+          {faqData.slice(0, half).map((faq, index) => (
+            <QaCard
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isActive={index === activeIndex}
+              onClick={() => handleCardClick(index)}
+            />
+          ))}
+        </div>
+        <div className={styles.column}>
+          {faqData.slice(half).map((faq, index) => (
+            <QaCard
+              key={index + half}
+              question={faq.question}
+              answer={faq.answer}
+              isActive={index + half === activeIndex}
+              onClick={() => handleCardClick(index + half)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,61 +1,100 @@
 .qaCard {
-   background-color: #000; /* Черный фон */
-   border-bottom: 1px solid #fff; /* Белая линия между карточками */
-   margin-bottom: 10px;
-   padding: 15px;
-   transition: all 0.3s ease;
-   cursor: pointer;
-   position: relative;
- 
-   &:last-child {
-     border-bottom: none; /* Убрать последнюю линию */
-   }
- 
-   h2 {
-     font-size: 18px;
-     margin: 0;
-     transition: color 0.3s ease;
-     color: #fff; /* Белый текст */
-     display: flex;
-     justify-content: space-between;
-     align-items: flex-start; /* Прижать иконку к верху */
-     line-height: 1.2; /* Уменьшенное расстояние между строчками */
- 
-     .icon {
-       font-size: 18px;
-       transition: transform 0.3s ease;
-       color: #fff; /* Белая иконка */
-        /* Отступ от текста */
-     }
-   }
- 
-   p {
-     font-size: 16px;
-     color: #fff; /* Белый текст */
-     margin: 10px 0 0;
-     max-height: 0;
-     overflow: hidden;
-     transition: max-height 0.3s ease, padding 0.3s ease;
-     padding: 0;
-   }
- 
-   &.active {
-     h2 {
-       color: #007bff;
-     }
- 
-     p {
-       max-height: 1000px; /* Большое значение для раскрытия контента */
-       padding: 10px 0;
-     }
-   }
- 
-   @media (max-width: 520px) {
-     padding: 10px;
- 
-     p {
-       font-size: 14px;
-     }
-   }
- }
- 
+  background-color: #000; /* Черный фон */
+  border-top: 1px solid #fff; /* Белая линия между карточками */
+  padding: 50px 0; /* Отступы сверху и снизу по 50px, по бокам 15px */
+  padding-top: 30px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  height: 60px; /* Фиксированная высота для закрытой карточки */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  h2 {
+    font-size: 24px;
+    margin: 0;
+    transition: color 0.3s ease;
+    color: #fff; /* Белый текст */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Прижать иконку к верху */
+    vertical-align: middle;
+    line-height: 1.2; /* Уменьшенное расстояние между строчками */
+
+    .icon {
+      font-size: 42px;
+      font-weight: 200;
+      transition: transform 0.3s ease;
+      color: #fff; /* Белая иконка */
+      margin-left: 10px; /* Отступ от текста */
+
+      @media (max-width: 1440px) {
+        font-size: 36px;
+      }
+  
+      @media (max-width: 768px) {
+        font-size: 28px;
+      }
+    }
+  }
+
+  .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, margin 0.3s ease; /* Добавлен переход для отступа между вопросом и ответом */
+    margin: 50px 0; /* Отступ между вопросом и ответом */
+
+    p {
+      font-size: 24px;
+      color: #fff; /* Белый текст */
+      margin: 0; /* Отступы внутри параграфа */
+      opacity: 0.7;
+
+      @media (max-width: 1440px) {
+          font-size: 20px;
+      }
+    
+      @media (max-width: 1024px) {
+          font-size: 18px;
+      }
+    }
+  }
+
+  &.active {
+    height: auto; /* Высота автоматически подстраивается под контент */
+    padding-bottom: 0; /* Отступ снизу у активной карточки */
+
+    @media (max-width: 768px) {
+      padding-bottom: 0;
+    }
+
+    .content {
+      max-height: 1000px; /* Большое значение для раскрытия контента */
+      margin: 20px 0; /* Установка отступа в 50px при активной карточке */
+      padding-right: 20px;
+
+    }
+  }
+
+  @media (max-width: 1440px) {
+    h2 {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin: 10px 0;
+  }
+
+  @media (max-width: 520px) {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
