@@ -1,25 +1,22 @@
-
 .contacts {
   display: flex;
   flex-direction: column;
   height: calc(var(--vh, 1vh) * 100 - 91px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
   color: white;
-  overflow: hidden;
-  justify-content: flex-start;
+  overflow: hidden; /* Избегаем прокрутки контента, если он выходит за границы */
 
   &__map {
-    position: relative;
     margin-bottom: 30px;
-    overflow: hidden;
     border-radius: 5px;
+    overflow: hidden;
     height: 100%;
 
     iframe {
       border-radius: 5px;
-      overflow: hidden;
       border: none;
       filter: grayscale(20%);
-      height: 100%;
+      width: 100%; /* Сделаем iframe полностью заполняющим родительский контейнер */
+      height: 100%; /* Сделаем iframe полностью заполняющим родительский контейнер */
     }
   }
 
@@ -28,17 +25,18 @@
     flex-direction: row;
     justify-content: space-between;
     row-gap: 30px;
+    padding-right: 20px;
 
     @media (max-width: 1024px) {
+       /* На мобильных устройствах переходим на вертикальное расположение */
+    }
+
+    @media (max-width: 900px) {
       flex-direction: column;
     }
 
-    padding-left: 20px;
-    padding-right: 20px;
-
     @media (max-width: 520px) {
-      padding-left: 0;
-      padding-right: 10px;
+      padding-right: 0;
     }
   }
 
@@ -62,13 +60,15 @@
 
     @media (max-width: 1024px) {
       gap: 30px;
-      column-gap: 50px;
-      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      margin-right: auto;
     }
 
     @media (max-width: 520px) {
       grid-template-columns: repeat(2, 1fr); /* При малых экранах переходим на две колонки */
-      padding-bottom: 10px;
+      padding-bottom: 0;
       gap: 20px;
     }
 
@@ -101,7 +101,11 @@
 
     @media (max-width: 1024px) {
       font-size: 14px;
-      display: none;
+      
+    }
+
+    @media (max-width: 900px) {
+      display: none; /* Скрываем заголовок на мобильных устройствах */
     }
   }
 }

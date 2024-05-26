@@ -1,0 +1,61 @@
+.qaCard {
+   background-color: #000; /* Черный фон */
+   border-bottom: 1px solid #fff; /* Белая линия между карточками */
+   margin-bottom: 10px;
+   padding: 15px;
+   transition: all 0.3s ease;
+   cursor: pointer;
+   position: relative;
+ 
+   &:last-child {
+     border-bottom: none; /* Убрать последнюю линию */
+   }
+ 
+   h2 {
+     font-size: 18px;
+     margin: 0;
+     transition: color 0.3s ease;
+     color: #fff; /* Белый текст */
+     display: flex;
+     justify-content: space-between;
+     align-items: flex-start; /* Прижать иконку к верху */
+     line-height: 1.2; /* Уменьшенное расстояние между строчками */
+ 
+     .icon {
+       font-size: 18px;
+       transition: transform 0.3s ease;
+       color: #fff; /* Белая иконка */
+        /* Отступ от текста */
+     }
+   }
+ 
+   p {
+     font-size: 16px;
+     color: #fff; /* Белый текст */
+     margin: 10px 0 0;
+     max-height: 0;
+     overflow: hidden;
+     transition: max-height 0.3s ease, padding 0.3s ease;
+     padding: 0;
+   }
+ 
+   &.active {
+     h2 {
+       color: #007bff;
+     }
+ 
+     p {
+       max-height: 1000px; /* Большое значение для раскрытия контента */
+       padding: 10px 0;
+     }
+   }
+ 
+   @media (max-width: 520px) {
+     padding: 10px;
+ 
+     p {
+       font-size: 14px;
+     }
+   }
+ }
+ 

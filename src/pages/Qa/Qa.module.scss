@@ -1,10 +1,32 @@
-.root {
+.qa {
    display: flex;
-   justify-content: center;
+   flex-direction: column;
    align-items: center;
-   height: calc(var(--vh, 1vh) * 100 - 90px);
-
-   h1 {
-      color: white;
+   padding: 20px;
+ 
+   &__title {
+     font-size: 24px;
+     margin-bottom: 20px;
+     font-weight: bold;
+     color: #fff; /* Белый текст */
    }
-}
+ 
+   &__cardsContainer {
+     width: 100%;
+     max-width: 600px;
+   }
+ 
+   @media (max-width: 520px) {
+     padding: 10px;
+ 
+     &__title {
+       font-size: 20px;
+     }
+ 
+     &__cardsContainer {
+       width: 100%;
+       max-width: 100%;
+     }
+   }
+ }
+ 
