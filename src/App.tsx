@@ -12,7 +12,7 @@ function App() {
   return (
     <Routes>
       <Route path={"/"} element={<MainLayout />}>
-        <Route path={"/home"} element={<Home />} />
+        <Route index element={<Home />} /> {/* Используйте "index" вместо пути */}
         <Route path={"/qa"} element={<Qa />} />
         <Route path={"/contacts"} element={<Contacts />} />
         <Route path={"*"} element={<NotFound />} />
