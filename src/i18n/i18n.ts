@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import translationEN from './locales/en.json';
-import translationRU from './locales/ru.json';
+import translationEN from '../locales/en.json';
+import translationRU from '../locales/ru.json';
 
 const resources = {
    en: {
@@ -19,7 +19,6 @@ i18n
       fallbackLng: 'en',
       debug: true,
       interpolation: {
-         escapeValue: false,
       },
    });
 

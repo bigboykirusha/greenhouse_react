@@ -22,7 +22,7 @@ const Qa: React.FC = () => {
         <div className={styles.column}>
           {cards.slice(0, half).map((faq, index) => (
             <QaCard
-              key={index}
+              key={`card_${index}`} // Использование индекса с префиксом
               question={faq.question}
               answer={faq.answer}
               isActive={index === activeIndex}
@@ -33,7 +33,7 @@ const Qa: React.FC = () => {
         <div className={styles.column}>
           {cards.slice(half).map((faq, index) => (
             <QaCard
-              key={index + half}
+              key={`card_${index + half}`} // Использование индекса с префиксом
               question={faq.question}
               answer={faq.answer}
               isActive={index + half === activeIndex}

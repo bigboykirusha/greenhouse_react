@@ -1,35 +1,45 @@
-@import '../../scss/_variables';
+@import "../../scss/_variables";
 
 .header {
   position: fixed;
   background-color: $black;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
   padding: 20px;
+  height: 70px;
 
   &__logo {
+    position: relative;
+    z-index: 100000;
     margin: auto 0;
-    width: 60px;
 
     h1 {
       cursor: pointer;
       font-family: 'DM Mono';
-      font-size: 24px;
-      color: $white;
+      font-size: 28px;
+      color: $white; // По умолчанию цвет белый
       font-weight: 500;
     }
   }
+
+  // Добавляем стиль для активного бургер-меню
+  &.active .header__logo h1 {
+    color: $black; // Когда активно бургер-меню, цвет текста становится черным
+  }
+
+  // Другие стили
 
   &__navbar {
     display: flex;
     gap: 20px;
     align-items: center;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
     transition: all $duration ease-in-out;
 
@@ -52,32 +62,11 @@
     }
   }
 
-  &__formBox {
-    width: 60px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
+  &__language {
     @media (max-width: 1024px) {
       display: none;
     }
   }
-
-  &__buttonBox {
-    // Empty
-  }
-}
-
-.languageSelector {
-  // Styles for the language selector
-}
-
-.toggleBtn {
-  // Styles for the toggle button
-}
-
-.active {
-  // Styles for the active element
 }
 
 .burgerMenu {
@@ -131,6 +120,7 @@
 
   &__content {
     text-align: center;
+    margin: 0 auto;
   }
 
   &__link {

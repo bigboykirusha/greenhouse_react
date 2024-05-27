@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isMenuActive ? styles.active : ""}`}>
       <Link to="/home" onClick={scrollToTop}>
         <div className={styles.header__logo}>
           <h1>RE-E</h1>
@@ -33,11 +33,13 @@ const Header = () => {
       </Link>
       <div className={styles.header__navbar}>
         <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/qa" className={styles.header__button}>
-        {t('header.qa')}
+          {t('header.qa')}
         </Link>
         <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/contacts" className={styles.header__button}>
           {t('header.contacts')}
         </Link>
+      </div>
+      <div className={styles.header__language}>
         <LanguageSwitcher />
       </div>
       <div className={`${styles.burgerMenu} ${isMenuActive ? styles.active : ""}`} onClick={toggleMenu}>
@@ -48,7 +50,6 @@ const Header = () => {
       {isMenuActive && (
         <div className={styles.fullscreenMenu}>
           <div className={styles.fullscreenMenu__content}>
-            <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/home" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.home')}</Link>
             <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/contacts" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.contacts')}</Link>
             <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/qa" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.qa')}</Link>
             <LanguageSwitcher />

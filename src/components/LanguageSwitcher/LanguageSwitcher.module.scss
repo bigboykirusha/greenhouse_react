@@ -1,0 +1,28 @@
+@import "../../scss/_variables";
+
+.languageSwitcherButton {
+   font-size: 20px;
+   font-family: 'DM Mono';
+   padding: 10px 0;
+   max-width: fit-content;
+   background-color: black;
+   color: white;
+   border-radius: 40px;
+   margin: 0 auto;
+   cursor: pointer;
+   transition: all $duration ease;
+
+   @media (max-width: 1024px) {
+      padding: 10px 40px;
+    }
+ }
+ 
+ .languageSwitcherButton:hover {
+   text-decoration: underline;
+   filter: brightness(0.6);
+   @media (max-width: 1024px) {
+      text-decoration: none;
+      filter: brightness(1);
+    }
+ }
+ 

@@ -16,19 +16,19 @@
          },
          {
             "question": "Can I control the greenhouse from my phone?",
-            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+            "answer": "Yes, you can control the Smart Greenhouse from your phone. Most Smart Greenhouses come with a mobile app that allows you to monitor and adjust settings remotely. This includes managing irrigation schedules, adjusting temperature, and receiving notifications about the greenhouse's conditions."
          },
          {
             "question": "Are these greenhouses sustainable?",
-            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+            "answer": "Yes, Smart Greenhouses are designed to be sustainable. They use energy-efficient systems and can incorporate renewable energy sources like solar panels. Additionally, the precise control over water and nutrient delivery reduces waste, making the gardening process more environmentally friendly."
          },
          {
             "question": "Will Smart Greenhouses fit in my small garden?",
-            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+            "answer": "Smart Greenhouses come in various sizes, making them suitable for different garden spaces. There are compact models specifically designed for small gardens, so you can enjoy the benefits of a Smart Greenhouse even if you have limited space."
          },
          {
             "question": "How tech-savvy do I need to be to use one?",
-            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+            "answer": "You don't need to be very tech-savvy to use a Smart Greenhouse. They are designed to be user-friendly with intuitive controls. Most systems come with easy-to-follow instructions, and the mobile apps are straightforward to use. Even if you're not very familiar with technology, you can quickly learn how to operate the greenhouse."
          }
       ]
    },
@@ -60,26 +60,25 @@
    "home": {
       "title": "Smart<br/>greenhouses",
       "subtitle": "Grow your garden smarter with our Smart Greenhouses. Packed with clever tech to keep your plants happy, our greenhouses make it easy to maintain the perfect environment. Your greens will be healthier, and you'll have more time to relax and enjoy. It's all about getting the best from nature, effortlessly. Welcome to your garden's bright future!",
-      "exploreText": "Explore Green Tech",
       "exploreGreenTech": "Explore Green Tech"
    },
    "greenhouse": {
       "cards": [
          {
             "title": "Light",
-            "description": "Set up a flexible lighting schedule suitable for each growth stage of the plant."
+            "description": "Set a flexible lighting schedule, suitable for each stage of plant's growth."
          },
          {
             "title": "Ventilation",
-            "description": "Control the temperature and humidity of the air, as well as the operation of all fans and exhausts."
+            "description": "Control air temperature and humidity, as well as the operation of all vents and exhaust devices."
          },
          {
             "title": "CO2 Levels",
-            "description": "Provide plants with the necessary CO2 with our gas concentration control system."
+            "description": "Provide your plants with the CO2 levels they need with our gas monitoring system."
          },
          {
             "title": "Soil",
-            "description": "Monitor soil condition with pH, NPK, and temperature sensors."
+            "description": "Monitor the soil condition using pH, NPK and temperature sensors."
          },
          {
             "title": "Watering and Water Treatment",
@@ -87,7 +86,7 @@
          },
          {
             "title": "Internet Connection and Video Surveillance",
-            "description": "Manage the greenhouse, receive information, and monitor plants in real-time."
+            "description": "Manage the greenhouse, get information and watch your plants in real time."
          }
       ]
    }
