@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header className={`${styles.header} ${isMenuActive ? styles.active : ""}`}>
-      <Link to="/home" onClick={scrollToTop}>
+      <Link to="/home" onClick={() => { scrollToTop(); closeMenu(); }}>
         <div className={styles.header__logo}>
           <h1>RE-E</h1>
         </div>
