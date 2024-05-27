@@ -1,3 +1,5 @@
+@import "../../scss/_variables";
+
 .swiper {
    display: flex;
    position: relative;
@@ -8,7 +10,7 @@
    align-items: center;
    margin: 0 auto;
    margin-bottom: 30px;
-   transition: all 0.3s ease-in-out;
+   transition: all $duration ease-in-out;
 
    &:hover {
      transform: scale(0.95);
@@ -20,7 +22,8 @@
    &__text {
     font-size: 18px;
     font-weight: 500;
- 
+    font-family: 'DM Mono';
+
     @media (max-width: 991px) {
       font-size: 16px;
     }

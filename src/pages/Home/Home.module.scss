@@ -1,7 +1,7 @@
 @import "../../scss/_variables";
 
 .root {
-  background-color: $black;
+  background-color: $background;
   color: $white;
   height: calc((100vh*2) - 90px);
 }
@@ -111,7 +111,6 @@
   }
 
   &__subtitle {
-    font-family: 'Montserrat';
     font-size: 27px;
     line-height: 1.5;
     color: $white;
@@ -127,24 +126,6 @@
 
     @media (max-width: 991px) {
       font-size: 18px;
-    }
-  }
-
-  &__picture {
-    display: none;
-    position: absolute;
-    right: -20px;
-    bottom: 0;
-    height: 105%;
-    width: auto;
-    opacity: 0.9;
-
-    @media (orientation: portrait) {
-      display: none;
-    }
-
-    @media (max-aspect-ratio: 5/3) {
-      opacity: 0.3;
     }
   }
 }

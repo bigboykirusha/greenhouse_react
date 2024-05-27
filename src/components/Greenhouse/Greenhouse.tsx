@@ -19,6 +19,7 @@ import wifiIcon from "../../assest/icons/wifi.png";
 import idCamIcon from "../../assest/icons/idCamIcon.svg";
 
 import TextInformation from '../TextInformation/TextInformation';
+import { useTranslation } from 'react-i18next';
 
 const Greenhouse: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -26,40 +27,38 @@ const Greenhouse: React.FC = () => {
   const handleSetActive = (index: number | null) => {
     setActiveIndex(index);
   };
-  
-  const cardsData = [
-    {
-      title: 'Свет',
-      description: 'Настраивайте гибкий световой график, подходящий для каждой из стадий роста растения.',
-      image: [lightIcon, spectrumIcon],
-    },
-    {
-      title: 'Вентиляция',
-      description: 'Контролируйте температуру и влажность воздуха, а также работу всех вентиляторов и вытяжек.',
-      image: [fanIcon],
-    },
-    {
-      title: 'Уровень CO2',
-      description: 'Обеспечивайте растения необходимым СО2 с нашей системой контроля концентрации газа.',
-      image: [co2Icon],
-    },
-    {
-      title: 'Почва',
-      description: 'Следите за состоянием почвы с помощью датчиков измерения pH, NPK и температуры.',
-      image: [soilIcon],
-    },
-    {
-      title: 'Полив и водоподготовка',
-      description: 'Подготавливайте воду, используя систему измерения температуры, pH и TDS, и настраивайте удобный график полива.',
-      image: [wateringSystemsIcon],
-    },
-    {
-      title: 'Связь с интернетом и видеонаблюдение',
-      description: 'Управляйте теплицей, получайте информацию и наблюдайте за растениями в режиме реального времени.',
-      image: [idCamIcon, wifiIcon, mobileIcon],
-    },
-  ];
 
+  const { t } = useTranslation();
+
+  const getImageArray = (index: number) => {
+    switch (index) {
+      case 0:
+        return [lightIcon, spectrumIcon];
+      case 1:
+        return [fanIcon];
+      case 2:
+        return [co2Icon];
+      case 3:
+        return [soilIcon];
+      case 4:
+        return [wateringSystemsIcon];
+      case 5:
+        return [idCamIcon, wifiIcon, mobileIcon];
+      default:
+        return [];
+    }
+  };
+
+  const cardsData: any[] = [];
+  const greenhouseCards = t('greenhouse.cards', { returnObjects: true });
+
+  for (const [index, card] of Object.entries(greenhouseCards)) {
+    cardsData.push({
+      title: card.title,
+      description: card.description,
+      image: getImageArray(Number(index)),
+    });
+  }
 
   useEffect(() => {
     const setVhProperty = () => {
@@ -78,15 +77,15 @@ const Greenhouse: React.FC = () => {
   useEffect(() => {
     const animationContainer = document.getElementById("animation-container");
     if (animationContainer) {
-        Lottie.loadAnimation({
-            container: animationContainer,
-            renderer: "svg",
-            loop: true,
-            autoplay: true,
-            animationData: animationData,
-        });
+      Lottie.loadAnimation({
+        container: animationContainer,
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        animationData: animationData,
+      });
     }
-}, []);
+  }, []);
 
   return (
     <div className={styles.greenhouse}>

@@ -31,7 +31,7 @@
     align-items: center;
     font-size: 18px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all $duration ease-in-out;
 
     @media (max-width: 1024px) {
       display: none;
@@ -44,7 +44,7 @@
 
   &__button {
     color: $white;
-    font-family: 'Helvetica';
+    font-family: 'DM Mono';
     text-decoration: none;
 
     &:hover {
@@ -94,7 +94,7 @@
   }
 
   &.active .burgerBar {
-    background-color: $black; // Change to black when active
+    background-color: $black;
   }
 
   &.active .bar1 {
@@ -114,7 +114,7 @@
   width: 100%;
   height: 3px;
   background-color: $white;
-  transition: all 0.3s ease-in-out;
+  transition: all $duration ease-in-out;
 }
 
 .fullscreenMenu {
@@ -127,7 +127,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn $duration ease-in-out;
 
   &__content {
     text-align: center;
@@ -140,7 +140,7 @@
     color: $black;
     text-decoration: none;
     margin: 20px 0;
-    transition: color 0.3s ease-in-out;
+    transition: color $duration ease-in-out;
   }
 }
 

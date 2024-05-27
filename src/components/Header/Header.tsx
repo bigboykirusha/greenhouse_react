@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../LanguageSwitcher/LanguageSwitcher";
+import i18n from "i18next";
 
 const Header = () => {
   const [isMenuActive, setMenuActive] = useState(false);
-
-  const leftClick = () => {
-    console.log("EN button clicked");
-    // Add your logic here
-  };
+  const { t } = useTranslation();
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -32,18 +31,14 @@ const Header = () => {
           <h1>RE-E</h1>
         </div>
       </Link>
-      <div className={`${styles.header__navbar} ${isMenuActive ? styles.active : ""}`}>
-        <Link to="/qa" className={styles.header__button} onClick={closeMenu}>
-          QA
+      <div className={styles.header__navbar}>
+        <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/qa" className={styles.header__button}>
+        {t('header.qa')}
         </Link>
-        <Link to="/contacts" className={styles.header__button} onClick={closeMenu}>
-          Contacts
+        <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/contacts" className={styles.header__button}>
+          {t('header.contacts')}
         </Link>
-      </div>
-      <div className={styles.header__formBox}>
-        <div className={`${styles.header__buttonBox} ${styles.languageSelector}`}>
-          <button type="button" className={`${styles.toggleBtn} ${styles.active}`} id="btnEN" onClick={leftClick}>EN</button>
-        </div>
+        <LanguageSwitcher />
       </div>
       <div className={`${styles.burgerMenu} ${isMenuActive ? styles.active : ""}`} onClick={toggleMenu}>
         <div className={`${styles.burgerBar} ${styles.bar1}`}></div>
@@ -53,9 +48,10 @@ const Header = () => {
       {isMenuActive && (
         <div className={styles.fullscreenMenu}>
           <div className={styles.fullscreenMenu__content}>
-            <Link to="/home" className={styles.fullscreenMenu__link} onClick={closeMenu}>Home</Link>
-            <Link to="/contacts" className={styles.fullscreenMenu__link} onClick={closeMenu}>Contacts</Link>
-            <Link to="/qa" className={styles.fullscreenMenu__link} onClick={closeMenu}>QA</Link>
+            <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/home" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.home')}</Link>
+            <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/contacts" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.contacts')}</Link>
+            <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/qa" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.qa')}</Link>
+            <LanguageSwitcher />
           </div>
         </div>
       )}

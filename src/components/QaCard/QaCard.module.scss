@@ -1,10 +1,12 @@
+@import "../../scss/_variables";
+
 .qaCard {
-  background-color: #000;
+  background-color: $background;
   border-bottom: 1px solid rgba(white, 0.5);
   cursor: pointer;
   padding: 40px 0;
   font-size: 22px;
-  transition: all 0.3s ease-in-out;
+  transition: all $duration ease-in-out;
 
   @media (max-width: 1024px) {
     padding: 20px 0;
@@ -24,9 +26,8 @@
 .qaTitle {
   margin-right: 40px;
   flex: 1;
-  color: #fff;
-  font-family: 'Helvetica';
-  font-weight: medium;
+  color: $white;
+  font-weight: 500;
 }
 
 .icon img {
@@ -38,11 +39,10 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, margin 0.3s ease;
-  color: #fff;
+  color: $white;
   margin-right: 52px;
   opacity: 0.6;
-  font-family: 'Helvetica';
-  font-weight: medium;
+  font-weight: 500;
 }
 
 .active {

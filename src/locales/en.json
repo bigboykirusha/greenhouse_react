@@ -1,0 +1,94 @@
+{
+   "header": {
+      "logo": "RE-E",
+      "qa": "QA",
+      "contacts": "Contacts",
+      "enButton": "EN",
+      "ruButton": "RU",
+      "home": "Home"
+   },
+   "qa": {
+      "title": "Find Your Answers",
+      "cards": [
+         {
+            "question": "How do Smart Greenhouses make gardening easier?",
+            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+         },
+         {
+            "question": "Can I control the greenhouse from my phone?",
+            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+         },
+         {
+            "question": "Are these greenhouses sustainable?",
+            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+         },
+         {
+            "question": "Will Smart Greenhouses fit in my small garden?",
+            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+         },
+         {
+            "question": "How tech-savvy do I need to be to use one?",
+            "answer": "Our Smart Greenhouses automate the perfect growing conditions, so you can enjoy thriving plants with less fuss. They monitor and adjust temperature, humidity, and CO2 levels for optimal growt"
+         }
+      ]
+   },
+   "contact": {
+      "companyName": "Smart Greenhouses Co., Ltd.",
+      "cards": [
+         {
+            "title": "Head Office",
+            "description": "88/8 Moo 9, Green Road,<br />Bang Phli District,<br />Samut Prakan 10540,<br />Thailand"
+         },
+         {
+            "title": "Contact Us",
+            "description": "Email: co.th<br />Phone: +66 (0)2 123 4567<br />Fax: +66 (0)2 765 4321"
+         },
+         {
+            "title": "Connect With Us",
+            "description": "Facebook: /bigboykirusha<br />Twitter: @bigboykirusha<br />Instagram: @bigboykirusha"
+         },
+         {
+            "title": "Legal Information",
+            "description": "Company Registration No.: 0123456789<br />VAT ID: TH0123456789"
+         },
+         {
+            "title": "Customer Service",
+            "description": "Phone: +66 (0)2 987 6543<br />Hours: Monday to Friday, 9am to 5pm (ICT)"
+         }
+      ]
+   },
+   "home": {
+      "title": "Smart<br/>greenhouses",
+      "subtitle": "Grow your garden smarter with our Smart Greenhouses. Packed with clever tech to keep your plants happy, our greenhouses make it easy to maintain the perfect environment. Your greens will be healthier, and you'll have more time to relax and enjoy. It's all about getting the best from nature, effortlessly. Welcome to your garden's bright future!",
+      "exploreText": "Explore Green Tech",
+      "exploreGreenTech": "Explore Green Tech"
+   },
+   "greenhouse": {
+      "cards": [
+         {
+            "title": "Light",
+            "description": "Set up a flexible lighting schedule suitable for each growth stage of the plant."
+         },
+         {
+            "title": "Ventilation",
+            "description": "Control the temperature and humidity of the air, as well as the operation of all fans and exhausts."
+         },
+         {
+            "title": "CO2 Levels",
+            "description": "Provide plants with the necessary CO2 with our gas concentration control system."
+         },
+         {
+            "title": "Soil",
+            "description": "Monitor soil condition with pH, NPK, and temperature sensors."
+         },
+         {
+            "title": "Watering and Water Treatment",
+            "description": "Prepare water using a system for measuring temperature, pH, and TDS, and set up a convenient watering schedule."
+         },
+         {
+            "title": "Internet Connection and Video Surveillance",
+            "description": "Manage the greenhouse, receive information, and monitor plants in real-time."
+         }
+      ]
+   }
+}

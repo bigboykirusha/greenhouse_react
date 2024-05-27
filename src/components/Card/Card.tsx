@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ title, description, images, setActive, inde
                <img src={images} alt="Icon" />
             )}
          </div>
-         <h2>{title}</h2>
+         <h2 >{title}</h2>
          <p>{description}</p>
       </div>
    );

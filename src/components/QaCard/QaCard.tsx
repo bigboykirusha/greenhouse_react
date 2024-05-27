@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './QaCard.module.scss';
 import minus from '../../assest/icons/minus.svg'
 import plus from '../../assest/icons/plus.svg'
-
 interface QaCardProps {
   question: string;
   answer: string;

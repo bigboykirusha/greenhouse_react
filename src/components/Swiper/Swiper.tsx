@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Swiper.module.scss';
+import i18n from 'i18next';
 
 interface SwiperProps {
    targetRef: React.RefObject<HTMLElement>;
@@ -16,7 +17,7 @@ const Swiper: React.FC<SwiperProps> = ({ targetRef, text, icon }) => {
 
    return (
       <div onClick={handleClick} className={styles.swiper}>
-         <div className={styles.swiper__text}>{text}</div>
+         <div style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} className={styles.swiper__text}>{text}</div>
          <img className={styles.swiper__icon} src={icon} alt="Swiper Icon" />
       </div>
    );

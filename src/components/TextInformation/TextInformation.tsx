@@ -15,6 +15,7 @@ interface TextInformationProps {
 }
 
 const TextInformation: React.FC<TextInformationProps> = ({ cards, setActive, activeIndex }) => {
+
    return (
       <section className={styles.textInformation}>
          {cards.map((card, index) => (
