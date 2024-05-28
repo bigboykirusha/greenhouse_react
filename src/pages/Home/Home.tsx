@@ -1,30 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./Home.module.scss";
-import logo from "../../assets/img/bgmobile.png";
+import logoWebP from "../../assets/img/bgmobile.webp";
+import logoPng from "../../assets/img/bgmobile.png";
 import downButton from "../../assets/icons/downButton.svg";
 import Greenhouse from "../../components/Greenhouse/Greenhouse";
 import Swiper from "../../components/Swiper/Swiper";
 import ScrollAnimation from "react-animate-on-scroll";
 import { useTranslation } from 'react-i18next';
+import useVhProperty from "../../hooks/useVhProperty";
 import i18n from "i18next";
 
 const Home: React.FC = () => {
   const ghRef = useRef<HTMLDivElement | null>(null);
   const { t } = useTranslation();
 
-  useEffect(() => {
-    function setVhProperty() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    }
-
-    setVhProperty(); // Вызываем функцию при монтировании компонента
-    window.addEventListener('resize', setVhProperty); // Обновляем при изменении размера окна
-
-    return () => {
-      window.removeEventListener('resize', setVhProperty); // Удаляем слушатель при размонтировании компонента
-    };
-  }, []);
+  useVhProperty();
 
   return (
     <div className={styles.root}>
@@ -45,7 +35,11 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className={styles.home__logocontainer}>
-            <img className={styles.home__logo} src={logo} alt="Logo" />
+            <picture>
+              <source srcSet={logoWebP} type="image/webp" />
+              <source srcSet={logoPng} type="image/png" />
+              <img className={styles.home__logo} src={logoPng} alt="Logo" />
+            </picture>
           </div>
         </div>
         <Swiper targetRef={ghRef} text={t('home.exploreGreenTech')} icon={downButton} />

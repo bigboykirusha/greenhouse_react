@@ -1,16 +1,21 @@
 import React from "react";
 import styles from "./NotFoundBlock.module.scss";
+import useVhProperty from "../../hooks/useVhProperty";
+import i18n from 'i18next';
+import { useTranslation } from "react-i18next";
 
 const NotFoundBlock: React.FC = () => {
+
+  const { t } = useTranslation();
+  useVhProperty();
+
+
   return (
-    <h1 className={styles.root}>
+    <div className={styles.root}>
       <span>🙂</span>
-      <br />
-      Ничего не найдено :(
-      <p className={styles.description}>
-        К сожалению, данная страница отсутсвует на нашем сайте
-      </p>
-    </h1>
+      <h2 className={styles.title}>{t('notfound.title')}</h2>
+      <p className={styles.description}>{t('notfound.subtitle')}</p>
+    </div>
   );
 };
 

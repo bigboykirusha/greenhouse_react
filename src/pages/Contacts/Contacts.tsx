@@ -3,19 +3,12 @@ import styles from "./Contacts.module.scss";
 import ContactsCard from "../../components/ContactsCard/ContactsCard";
 import { useTranslation } from 'react-i18next'; // Импортируем хук для использования переводов
 import i18n from "i18next";
+import useVhProperty from "../../hooks/useVhProperty";
 
 const Contacts: React.FC = () => {
   const { t } = useTranslation(); // Используем хук для доступа к переводам
 
-  useEffect(() => {
-    const setVh = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-    };
-    setVh();
-    window.addEventListener('resize', setVh);
-    return () => window.removeEventListener('resize', setVh);
-  }, []);
+  useVhProperty();
 
   const cards = t('contact.cards', { returnObjects: true }) as { title: string, description: string }[]; // Явно указываем тип данных для массива cards
 

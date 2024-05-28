@@ -1,14 +1,47 @@
+@import "../../scss/_variables";
+
 .root {
-   padding: 100px;
-   text-align: center;
-   width: 750px;
-   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  margin: 0 auto;
+  height: calc(var(--vh, 1vh) * 100 - 90px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
+  overflow: hidden; /* Избегаем прокрутки контента, если он выходит за границы */
+  text-align: center;
+  padding-top: 80px;
+
+  @media (max-width: 768px) {
+    padding-top: 60px;
+    width: 100%;
+  }
+  
    span {
      font-size: 64px;
+     margin-bottom: 20px;
+
+     @media (max-width: 768px) {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
    }
- }
- .description {
-   padding-top: 20px;
-   font-size: 24px;
-   font-weight: normal;
+   .title {
+    color: $white;
+    font-size: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
+   }
+   .description {
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: normal;
+    color: $white;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      padding-top: 10px;
+    }
+  }
  }

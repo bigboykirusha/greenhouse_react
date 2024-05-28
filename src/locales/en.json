@@ -89,5 +89,9 @@
             "description": "Manage the greenhouse, get information and watch your plants in real time."
          }
       ]
+   },
+   "notfound": {
+      "title": "Page not found :(",
+      "subtitle": "Unfortunately, this page does not exist on our website."
    }
 }

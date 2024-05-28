@@ -1,12 +1,14 @@
 import "./scss/app.scss";
 import { Route, Routes } from "react-router-dom";
-import NotFound from "./pages/NotFound/NotFound";
 import MainLayout from "./layouts/MainLayout";
-import Home from "./pages/Home/Home";
-import Qa from "./pages/Qa/Qa";
-import Contacts from "./pages/Contacts/Contacts";
-import React from "react";
+import React, { lazy } from "react";
 import "animate.css/animate.compat.css"
+
+const Home = lazy(() => import('./pages/Home/Home'));
+const Qa = lazy(() => import('./pages/Qa/Qa'));
+const Contacts = lazy(() => import('./pages/Contacts/Contacts'));
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
+
 function App() {
 
   return (
