@@ -37,15 +37,15 @@
       "cards": [
          {
             "title": "Head Office",
-            "description": "88/8 Moo 9, Green Road,<br />Bang Phli District,<br />Samut Prakan 10540,<br />Thailand"
+            "description": "134/1 Moo 5, Namueng,<br /> Koh Samui,<br />Surat Thani 84140,<br />Thailand"
          },
          {
             "title": "Contact Us",
-            "description": "Email: co.th<br />Phone: +66 (0)2 123 4567<br />Fax: +66 (0)2 765 4321"
+            "description": "<a href='mailto:reee.co.info@gmail.com'>Email: reee.co.info@gmail.com</a><br /><a href='tel:+66992070982'>Phone: +66 99 207 0982</a><br /><a href='tel:+66992070982'>Fax: +66 99 207 0982</a>"
          },
          {
             "title": "Connect With Us",
-            "description": "Facebook: /bigboykirusha<br />Twitter: @bigboykirusha<br />Instagram: @bigboykirusha"
+            "description": "<a href='https://www.instagram.com/re_re_ree/'>Facebook: /re_re_ree</a><br /><a href='https://line.me/ti/p/4MldZVKWTC'>Line: @re_re_ree</a><br /><a href='https://www.instagram.com/re_re_ree/'>Instagram: @re_re_ree</a>"
          },
          {
             "title": "Legal Information",
@@ -53,7 +53,7 @@
          },
          {
             "title": "Customer Service",
-            "description": "Phone: +66 (0)2 987 6543<br />Hours: Monday to Friday, 9am to 5pm (ICT)"
+            "description": "<a href='tel:+66992070982'>Phone: +66 99 207 0982</a><br />Hours: Monday to Friday, 9am to 5pm (ICT)"
          }
       ]
    },

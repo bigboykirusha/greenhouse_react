@@ -37,15 +37,15 @@
       "cards": [
          {
             "title": "Главный офис",
-            "description": "88/8 Moo 9, Green Road,<br />Bang Phli District,<br />Samut Prakan 10540,<br />Таиланд"
+            "description": "134/1 Moo 5, Namueng,<br /> Koh Samui,<br />Surat Thani 84140,<br />Thailand"
          },
          {
             "title": "Свяжитесь с нами",
-            "description": "Эл. почта: co.th<br />Телефон: +66 (0)2 123 4567<br />Факс: +66 (0)2 765 4321"
+            "description": "<a href='mailto:reee.co.info@gmail.com'>Эл. почта: reee.co.info@gmail.com</a><br /><a href='tel:+66992070982'>Телефон: +66 99 207 0982</a><br /><a href='tel:+66992070982'>Факс: +66 99 207 0982</a>"
          },
          {
-            "title": "Связаться с нами",
-            "description": "Facebook: /bigboykirusha<br />Twitter: @bigboykirusha<br />Instagram: @bigboykirusha"
+            "title": "Мы в соцсетях",
+            "description": "<a href='https://www.instagram.com/re_re_ree/'>Facebook: /re_re_ree</a><br /><a href='https://line.me/ti/p/4MldZVKWTC'>Line: @re_re_ree</a><br /><a href='https://www.instagram.com/re_re_ree/'>Instagram: @re_re_ree</a>"
          },
          {
             "title": "Юридическая информация",
@@ -53,7 +53,7 @@
          },
          {
             "title": "Служба поддержки",
-            "description": "Телефон: +66 (0)2 987 6543<br />Часы работы: понедельник - пятница,<br/> с 9:00 до 17:00 (ICT)"
+            "description": "<a href='tel:+66992070982'>Телефон: +66 99 207 0982</a><br />Часы работы: понедельник - пятница,<br/> с 9:00 до 17:00 (ICT)"
          }
       ]
    },
