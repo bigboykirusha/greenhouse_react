@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Lottie from 'lottie-web';
 import styles from "./Greenhouse.module.scss";
 import { openDB } from 'idb';
@@ -29,6 +29,7 @@ import useVhProperty from "../../hooks/useVhProperty";
 const Greenhouse: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [animationData, setAnimationData] = useState<any>(null);
+  const animationContainerRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
 
   const getImageArray = (index: number) => {
@@ -83,14 +84,18 @@ const Greenhouse: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const animationContainer = document.getElementById("animation-container");
-    if (animationContainer) {
+    if (animationContainerRef) {
       Lottie.loadAnimation({
-        container: animationContainer,
+        container: animationContainerRef.current!,
         renderer: "svg",
         loop: true,
         autoplay: true,
         animationData: animationData,
+        rendererSettings: {
+          progressiveLoad: true, // Загружает элементы по мере необходимости
+          preserveAspectRatio: 'xMidYMid meet', // Сохраняет соотношение сторон
+          hideOnTransparent: true // Скрывает анимацию при прозрачности
+        }
       });
     }
   }, [animationData]);
@@ -98,7 +103,7 @@ const Greenhouse: React.FC = () => {
   return (
     <div className={styles.greenhouse}>
       <section className={styles.interactiveSection}>
-        <div id="animation-container" className={styles.animationContainer}></div>
+        <div ref={animationContainerRef} id="animation-container" className={styles.animationContainer}></div>
         <picture>
           <source srcSet={pumpAndPipesWebP} type="image/webp" />
           <source srcSet={pumpAndPipesPng} type="image/png" />
