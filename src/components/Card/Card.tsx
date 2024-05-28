@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -36,8 +36,8 @@ const Card: React.FC<CardProps> = ({ title, description, images, setActive, inde
                <img src={images} alt="Icon" />
             )}
          </div>
-         <h2 >{title}</h2>
-         <p>{description}</p>
+         <h2 className={styles.title}>{title}</h2>
+         <p className={styles.description}>{description}</p>
       </div>
    );
 };

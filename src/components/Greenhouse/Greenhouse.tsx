@@ -1,33 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Lottie from 'lottie-web';
 import styles from "./Greenhouse.module.scss";
+import { openDB } from 'idb';
 
-import pumpAndPipes from "../../assest/img/pumpAndPipes.png";
-import conditioner from "../../assest/img/conditioner.png";
-import dehumidifier from "../../assest/img/dehumidifier.png";
-import lighting from "../../assest/img/lighting.png";
-import animationData from "../../assest/animation/data4.json";
+import pumpAndPipes from "../../assets/img/pumpAndPipes.png";
+import conditioner from "../../assets/img/conditioner.png";
+import dehumidifier from "../../assets/img/dehumidifier.png";
+import lighting from "../../assets/img/lighting.png";
 
-import lightIcon from "../../assest/icons/light.svg";
-import spectrumIcon from "../../assest/icons/spectrumIcon.svg";
-import fanIcon from "../../assest/icons/fanIcon.svg";
-import co2Icon from "../../assest/icons/co2Icon.svg";
-import soilIcon from "../../assest/icons/soil.svg";
-import wateringSystemsIcon from "../../assest/icons/wateringSystems.svg";
-import mobileIcon from "../../assest/icons/mobileIson.svg";
-import wifiIcon from "../../assest/icons/wifi.png";
-import idCamIcon from "../../assest/icons/idCamIcon.svg";
+import lightIcon from "../../assets/icons/light.svg";
+import spectrumIcon from "../../assets/icons/spectrumIcon.svg";
+import fanIcon from "../../assets/icons/fanIcon.svg";
+import co2Icon from "../../assets/icons/co2Icon.svg";
+import soilIcon from "../../assets/icons/soil.svg";
+import wateringSystemsIcon from "../../assets/icons/wateringSystems.svg";
+import mobileIcon from "../../assets/icons/mobileIson.svg";
+import wifiIcon from "../../assets/icons/wifi.png";
+import idCamIcon from "../../assets/icons/idCamIcon.svg";
 
 import TextInformation from '../TextInformation/TextInformation';
 import { useTranslation } from 'react-i18next';
 
 const Greenhouse: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const handleSetActive = (index: number | null) => {
-    setActiveIndex(index);
-  };
-
+  const [animationData, setAnimationData] = useState<any>(null);
   const { t } = useTranslation();
 
   const getImageArray = (index: number) => {
@@ -49,16 +45,11 @@ const Greenhouse: React.FC = () => {
     }
   };
 
-  const cardsData: any[] = [];
-  const greenhouseCards = t('greenhouse.cards', { returnObjects: true });
-
-  for (const [index, card] of Object.entries(greenhouseCards)) {
-    cardsData.push({
-      title: card.title,
-      description: card.description,
-      image: getImageArray(Number(index)),
-    });
-  }
+  const cardsData = Object.entries(t('greenhouse.cards', { returnObjects: true })).map(([index, card]) => ({
+    title: card.title,
+    description: card.description,
+    image: getImageArray(Number(index)),
+  }));
 
   useEffect(() => {
     const setVhProperty = () => {
@@ -75,6 +66,30 @@ const Greenhouse: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    const loadAnimationData = async () => {
+      const db = await openDB('animationsDB', 1, {
+        upgrade(db) {
+          db.createObjectStore('animations');
+        },
+      });
+
+      const cachedAnimationData = await db.get('animations', 'data4');
+      if (cachedAnimationData) {
+        setAnimationData(cachedAnimationData);
+      } else {
+        import("../../assets/animation/data4.json")
+          .then(data => {
+            db.put('animations', data.default, 'data4');
+            setAnimationData(data.default);
+          })
+          .catch(err => console.error("Failed to load animation data", err));
+      }
+    };
+
+    loadAnimationData();
+  }, []);
+
+  useEffect(() => {
     const animationContainer = document.getElementById("animation-container");
     if (animationContainer) {
       Lottie.loadAnimation({
@@ -85,7 +100,7 @@ const Greenhouse: React.FC = () => {
         animationData: animationData,
       });
     }
-  }, []);
+  }, [animationData]);
 
   return (
     <div className={styles.greenhouse}>
@@ -96,8 +111,7 @@ const Greenhouse: React.FC = () => {
         <img src={dehumidifier} className={`${styles.layer} ${activeIndex === 2 ? styles.active : ''}`} data-cell="co2" />
         <img src={lighting} className={`${styles.layer} ${activeIndex === 0 ? styles.active : ''}`} data-cell="light" />
       </section>
-      {/* Pass activeIndex as a prop to TextInformation */}
-      <TextInformation cards={cardsData} setActive={handleSetActive} activeIndex={activeIndex} />
+      <TextInformation cards={cardsData} setActive={setActiveIndex} activeIndex={activeIndex} />
     </div>
   );
 };

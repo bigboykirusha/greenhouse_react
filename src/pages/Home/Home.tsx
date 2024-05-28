@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./Home.module.scss";
-import logo from "../../assest/img/bgmobile.png";
-import downButton from "../../assest/icons/downButton.svg";
+import logo from "../../assets/img/bgmobile.png";
+import downButton from "../../assets/icons/downButton.svg";
 import Greenhouse from "../../components/Greenhouse/Greenhouse";
 import Swiper from "../../components/Swiper/Swiper";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 import i18n from "i18next";
 
 const Home: React.FC = () => {
-
   const ghRef = useRef<HTMLDivElement | null>(null);
   const { t } = useTranslation();
 
@@ -20,7 +19,6 @@ const Home: React.FC = () => {
     }
 
     setVhProperty(); // Вызываем функцию при монтировании компонента
-
     window.addEventListener('resize', setVhProperty); // Обновляем при изменении размера окна
 
     return () => {
@@ -35,7 +33,11 @@ const Home: React.FC = () => {
           <div className={styles.home__section}>
             <div className={styles.home__block}>
               <ScrollAnimation animateIn="fadeInUp">
-                <h1 style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} className={styles.home__title} dangerouslySetInnerHTML={{ __html: t('home.title') }}></h1>
+                <h1
+                  style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }}
+                  className={styles.home__title}
+                  dangerouslySetInnerHTML={{ __html: t('home.title') }}
+                />
               </ScrollAnimation>
               <ScrollAnimation animateIn="fadeInUp" delay={0.1 * 1000}>
                 <p className={styles.home__subtitle}>{t('home.subtitle')}</p>
@@ -43,7 +45,7 @@ const Home: React.FC = () => {
             </div>
           </div>
           <div className={styles.home__logocontainer}>
-            <img className={styles.home__logo} src={logo} alt="" />
+            <img className={styles.home__logo} src={logo} alt="Logo" />
           </div>
         </div>
         <Swiper targetRef={ghRef} text={t('home.exploreGreenTech')} icon={downButton} />

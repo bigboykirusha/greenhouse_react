@@ -17,12 +17,14 @@ const Header = () => {
   };
 
   const toggleMenu = () => {
-    setMenuActive((prevState) => !prevState);
+    setMenuActive(prevState => !prevState);
   };
 
   const closeMenu = () => {
     setMenuActive(false);
   };
+
+  const linkStyle = { fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' };
 
   return (
     <header className={`${styles.header} ${isMenuActive ? styles.active : ""}`}>
@@ -32,10 +34,10 @@ const Header = () => {
         </div>
       </Link>
       <div className={styles.header__navbar}>
-        <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/qa" className={styles.header__button}>
+        <Link style={linkStyle} to="/qa" className={styles.header__button}>
           {t('header.qa')}
         </Link>
-        <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/contacts" className={styles.header__button}>
+        <Link style={linkStyle} to="/contacts" className={styles.header__button}>
           {t('header.contacts')}
         </Link>
       </div>
@@ -50,8 +52,12 @@ const Header = () => {
       {isMenuActive && (
         <div className={styles.fullscreenMenu}>
           <div className={styles.fullscreenMenu__content}>
-            <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/contacts" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.contacts')}</Link>
-            <Link style={{ fontFamily: i18n.language === 'en' ? 'DM Mono' : 'Montserrat' }} to="/qa" className={styles.fullscreenMenu__link} onClick={closeMenu}>{t('header.qa')}</Link>
+            <Link style={linkStyle} to="/contacts" className={styles.fullscreenMenu__link} onClick={closeMenu}>
+              {t('header.contacts')}
+            </Link>
+            <Link style={linkStyle} to="/qa" className={styles.fullscreenMenu__link} onClick={closeMenu}>
+              {t('header.qa')}
+            </Link>
             <LanguageSwitcher />
           </div>
         </div>

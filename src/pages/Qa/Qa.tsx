@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Qa.module.scss";
 import QaCard from "../../components/QaCard/QaCard";
 import { useTranslation } from "react-i18next";
@@ -7,14 +7,12 @@ import ScrollAnimation from "react-animate-on-scroll";
 const Qa: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { t } = useTranslation();
+  const isFirstLoad = useRef(true);
 
   useEffect(() => {
-    // Save the original overflow style
     const originalOverflow = document.body.style.overflow;
-    // Remove overflow: hidden for the Qa component
     document.body.style.overflow = 'auto';
 
-    // Cleanup: restore the original overflow style when the component unmounts
     return () => {
       document.body.style.overflow = originalOverflow;
     };
@@ -25,8 +23,21 @@ const Qa: React.FC = () => {
   };
 
   const cards = t('qa.cards', { returnObjects: true }) as { question: string, answer: string }[];
-
   const half = Math.ceil(cards.length / 2);
+
+  useEffect(() => {
+    isFirstLoad.current = false;
+  }, []);
+
+  const renderCard = (faq: { question: string, answer: string }, index: number) => (
+    <QaCard
+      key={`card_${index}`}
+      question={faq.question}
+      answer={faq.answer}
+      isActive={index === activeIndex}
+      onClick={() => handleCardClick(index)}
+    />
+  );
 
   return (
     <div className={styles.qa}>
@@ -34,28 +45,32 @@ const Qa: React.FC = () => {
       <div className={styles.qa__cardsContainer}>
         <div className={styles.column}>
           {cards.slice(0, half).map((faq, index) => (
-            <ScrollAnimation animateIn="fadeInUp" delay={(index + 1) / 10 * 1000}>
-              <QaCard
-                key={`card_${index}`}
-                question={faq.question}
-                answer={faq.answer}
-                isActive={index === activeIndex}
-                onClick={() => handleCardClick(index)}
-              />
-            </ScrollAnimation>
+            isFirstLoad.current ? (
+              <ScrollAnimation
+                key={`animation_${index}`}
+                animateIn="fadeInUp"
+                delay={(index + 1) / 10 * 1000}
+              >
+                {renderCard(faq, index)}
+              </ScrollAnimation>
+            ) : (
+              renderCard(faq, index)
+            )
           ))}
         </div>
         <div className={styles.column}>
           {cards.slice(half).map((faq, index) => (
-            <ScrollAnimation animateIn="fadeInUp" delay={(index + 1 + half) / 10 * 1000}>
-              <QaCard
-                key={`card_${index + half}`}
-                question={faq.question}
-                answer={faq.answer}
-                isActive={index + half === activeIndex}
-                onClick={() => handleCardClick(index + half)}
-              />
-            </ScrollAnimation>
+            isFirstLoad.current ? (
+              <ScrollAnimation
+                key={`animation_${index + half}`}
+                animateIn="fadeInUp"
+                delay={(index + 1 + half) / 10 * 1000}
+              >
+                {renderCard(faq, index + half)}
+              </ScrollAnimation>
+            ) : (
+              renderCard(faq, index + half)
+            )
           ))}
         </div>
       </div>
