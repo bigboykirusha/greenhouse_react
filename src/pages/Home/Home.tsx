@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import styles from "./Home.module.scss";
 import logoWebP from "../../assets/img/bgmobile.webp";
 import logoPng from "../../assets/img/bgmobile.png";

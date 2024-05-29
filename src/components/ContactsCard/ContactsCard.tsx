@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './ContactsCard.module.scss';
 
 interface ContactsCardProps {

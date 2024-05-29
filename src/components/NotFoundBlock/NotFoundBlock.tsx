@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./NotFoundBlock.module.scss";
 import useVhProperty from "../../hooks/useVhProperty";
-import i18n from 'i18next';
 import { useTranslation } from "react-i18next";
 
 const NotFoundBlock: React.FC = () => {
