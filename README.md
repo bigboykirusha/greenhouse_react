@@ -19,7 +19,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 React, TypeScript, scss-modules.
 
 i18n - библиотека для мультиязычности, в src/locales файлы c переводами, весь текст на сайте редачим там. 
+
 idb - библиотека для сохранения тяжеловесной анимации в localStorage.
+
 lottie - билиотека для загрузки json анимации.
 
 В src/hooks кастомный хук для корретного подсчета высоты экрана в мобильных браузерах.
