@@ -14,7 +14,7 @@ function App() {
   return (
     <Routes>
       <Route path={"/"} element={<MainLayout />}>
-        <Route index element={<Home />} /> {/* Используйте "index" вместо пути */}
+        <Route index element={<Home />} />
         <Route path={"/qa"} element={<Qa />} />
         <Route path={"/contacts"} element={<Contacts />} />
         <Route path={"*"} element={<NotFound />} />

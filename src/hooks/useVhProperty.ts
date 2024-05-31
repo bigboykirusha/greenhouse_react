@@ -7,11 +7,11 @@ const useVhProperty = () => {
          document.documentElement.style.setProperty('--vh', `${vh}px`);
       };
 
-      setVhProperty(); // Вызываем функцию при монтировании компонента
-      window.addEventListener('resize', setVhProperty); // Обновляем при изменении размера окна
+      setVhProperty();
+      window.addEventListener('resize', setVhProperty);
 
       return () => {
-         window.removeEventListener('resize', setVhProperty); // Удаляем слушатель при размонтировании компонента
+         window.removeEventListener('resize', setVhProperty);
       };
    }, []);
 };

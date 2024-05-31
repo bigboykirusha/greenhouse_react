@@ -41,19 +41,15 @@
          },
          {
             "title": "Contact Us",
-            "description": "<a href='mailto:reee.co.info@gmail.com'>Email: reee.co.info@gmail.com</a><br /><a href='tel:+66992070982'>Phone: +66 99 207 0982</a><br /><a href='tel:+66992070982'>Fax: +66 99 207 0982</a>"
-         },
-         {
-            "title": "Connect With Us",
-            "description": "<a href='https://www.instagram.com/re_re_ree/'>Facebook: /re_re_ree</a><br /><a href='https://line.me/ti/p/4MldZVKWTC'>Line: @re_re_ree</a><br /><a href='https://www.instagram.com/re_re_ree/'>Instagram: @re_re_ree</a>"
-         },
-         {
-            "title": "Legal Information",
-            "description": "Company Registration No.: 0123456789<br />VAT ID: TH0123456789"
+            "description": "<a href='mailto:reee.co.info@gmail.com'>Email: reee.co.info@gmail.com</a><br /><a href='tel:+66992070982'>Phone: +66 99 207 0982</a><br /><a href='https://line.me/ti/p/4MldZVKWTC'>Line: @re_re_ree</a><br /><a href='https://www.instagram.com/re_re_ree/'>Instagram: @re_re_ree</a>"
          },
          {
             "title": "Customer Service",
             "description": "<a href='tel:+66992070982'>Phone: +66 99 207 0982</a><br />Hours: Monday to Friday, 9am to 5pm (ICT)"
+         },
+         {
+            "title": "Legal Information",
+            "description": ""
          }
       ]
    },

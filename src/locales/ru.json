@@ -41,19 +41,15 @@
          },
          {
             "title": "Свяжитесь с нами",
-            "description": "<a href='mailto:reee.co.info@gmail.com'>Эл. почта:<br/> reee.co.info@gmail.com</a><br /><a href='tel:+66992070982'>Телефон: +66 99 207 0982</a><br /><a href='tel:+66992070982'>Факс: +66 99 207 0982</a>"
-         },
-         {
-            "title": "Мы в соцсетях",
-            "description": "<a href='https://www.instagram.com/re_re_ree/'>Facebook: /re_re_ree</a><br /><a href='https://line.me/ti/p/4MldZVKWTC'>Line: @re_re_ree</a><br /><a href='https://www.instagram.com/re_re_ree/'>Instagram: @re_re_ree</a>"
-         },
-         {
-            "title": "Юридическая информация",
-            "description": "Регистрационный номер:<br/> 0123456789<br />Идентификатор НДС: TH0123456789"
+            "description": "<a href='mailto:reee.co.info@gmail.com'>Email: reee.co.info@gmail.com</a><br /><a href='tel:+66992070982'>Телефон: +66 99 207 0982</a><br /><a href='https://line.me/ti/p/4MldZVKWTC'>Line: @re_re_ree</a><br /><a href='https://www.instagram.com/re_re_ree/'>Instagram: @re_re_ree</a>"
          },
          {
             "title": "Служба поддержки",
-            "description": "<a href='tel:+66992070982'>Телефон: +66 99 207 0982</a><br />Часы работы: понедельник - пятница,<br/> с 9:00 до 17:00 (ICT)"
+            "description": "<a href='tel:+66992070982'>Телефон: +66 99 207 0982</a><br />Часы работы:<br/>понедельник - пятница,<br/> с 9:00 до 17:00 (ICT)"
+         },
+         {
+            "title": "Юридическая информация",
+            "description": ""
          }
       ]
    },

@@ -6,8 +6,8 @@
   width: 70%;
   align-items: center;
   margin: 0 auto;
-  height: calc(var(--vh, 1vh) * 100 - 90px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
-  overflow: hidden; /* Избегаем прокрутки контента, если он выходит за границы */
+  height: calc(var(--vh, 1vh) * 100 - 90px);
+  overflow: hidden;
   text-align: center;
   padding-top: 80px;
 

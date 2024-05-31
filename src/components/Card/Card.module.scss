@@ -8,10 +8,10 @@
   align-items: flex-start;
   text-align: left;
   min-height: 130px;
-  height: fit-content; // чтобы высота была равна содержимому
+  height: fit-content; 
   max-height: 250px;
   padding: 15px;
-  transition: all $duration ease-in-out; // добавим плавный переход для изменения прозрачности
+  transition: all $duration ease-in-out; 
 
   .containerIcons {
     display: flex;

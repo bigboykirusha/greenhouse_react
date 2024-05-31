@@ -1,11 +1,11 @@
 @import "../../scss/_variables";
 
 .textInformation {
-  display: grid; /* Используем грид для размещения карточек */
-  grid-template-columns: repeat(6, 1fr); /* Шесть столбцов на больших экранах */
-  grid-column-gap: 20px; // Отступы между колонками
-  grid-row-gap: 10px; // Отступы между рядами
-  margin: 0; /* Убираем внешние отступы */
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
+  margin: 0; 
 
   @media (max-width: 1440px) {
     grid-template-columns: repeat(3, 1fr);

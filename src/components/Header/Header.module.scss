@@ -24,7 +24,7 @@
       cursor: pointer;
       font-family: 'DM Mono';
       font-size: 26px;
-      color: $white; // По умолчанию цвет белый
+      color: $white; 
       font-weight: 400;
 
       @media (max-width: 1024px) {
@@ -33,12 +33,9 @@
     }
   }
 
-  // Добавляем стиль для активного бургер-меню
   &.active .header__logo h1 {
-    color: $black; // Когда активно бургер-меню, цвет текста становится черным
+    color: $black; 
   }
-
-  // Другие стили
 
   &__navbar {
     display: flex;
@@ -79,7 +76,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 24px; /* Adjust height to be proportional */
+  height: 24px; 
   cursor: pointer;
   z-index: 1001;
 

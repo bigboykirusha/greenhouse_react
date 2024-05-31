@@ -92,9 +92,9 @@ const Greenhouse: React.FC = () => {
         autoplay: true,
         animationData: animationData,
         rendererSettings: {
-          progressiveLoad: true, // Загружает элементы по мере необходимости
-          preserveAspectRatio: 'xMidYMid meet', // Сохраняет соотношение сторон
-          hideOnTransparent: true // Скрывает анимацию при прозрачности
+          progressiveLoad: true,
+          preserveAspectRatio: 'xMidYMid meet', 
+          hideOnTransparent: true
         }
       });
     }

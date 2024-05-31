@@ -3,9 +3,9 @@
 .contacts {
   display: flex;
   flex-direction: column;
-  height: calc(var(--vh, 1vh) * 100 - 90px); /* Рассчитываем высоту контейнера с учетом высоты шапки */
+  height: calc(var(--vh, 1vh) * 100 - 90px);
   color: $white;
-  overflow: hidden; /* Избегаем прокрутки контента, если он выходит за границы */
+  overflow: hidden; 
 
   &__map {
     margin-bottom: 30px;
@@ -45,21 +45,9 @@
 
   &__cardsContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 50px;
     padding-bottom: 20px;
-
-    div:nth-child(1),
-    div:nth-child(2),
-    div:nth-child(3) {
-      grid-column: span 2;
-    }
-
-    div:nth-child(4),
-    div:nth-child(5) {
-      grid-row: 2;
-      grid-column: span 3;
-    }
 
     @media (max-width: 1024px) {
       gap: 30px;
@@ -70,7 +58,7 @@
     }
 
     @media (max-width: 520px) {
-      grid-template-columns: repeat(2, 1fr); /* При малых экранах переходим на две колонки */
+      grid-template-columns: repeat(2, 1fr);
       padding-bottom: 0;
       gap: 20px;
     }
@@ -83,10 +71,9 @@
       div:nth-child(1),
       div:nth-child(2),
       div:nth-child(3),
-      div:nth-child(4),
-      div:nth-child(5) {
-        grid-column: auto; /* Сброс стилей для мобильных устройств */
-        grid-row: auto; /* Сброс стилей для мобильных устройств */
+      div:nth-child(4) {
+        grid-column: auto;
+        grid-row: auto; 
       }
 
       div:nth-child(5) {
@@ -98,7 +85,7 @@
   &__title {
     font-size: 22px;
     text-align: center;
-    white-space: nowrap; /* Запрещаем перенос заголовка */
+    white-space: nowrap;
     font-weight: 500;
 
     @media (max-width: 1440px) {
@@ -111,7 +98,7 @@
     }
 
     @media (max-width: 900px) {
-      display: none; /* Скрываем заголовок на мобильных устройствах */
+      display: none;
     }
   }
 }

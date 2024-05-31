@@ -7,7 +7,7 @@
 }
 
 .home {
-  height: calc(var(--vh, 1vh) * 100 - 70px); // Высота зависит от переменной --vh
+  height: calc(var(--vh, 1vh) * 100 - 70px);
   position: relative;
   display: flex;
   flex-direction: column;

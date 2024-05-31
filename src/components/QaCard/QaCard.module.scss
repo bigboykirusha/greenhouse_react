@@ -2,7 +2,7 @@
 
 .qaCard {
   background-color: $background;
-  border-bottom: 1px solid rgba(white, 0.5);
+  border-bottom: 1px solid rgba($white, 0.5);
   cursor: pointer;
   padding: 40px 0;
   font-size: 22px;
@@ -20,7 +20,7 @@
 .qaBlock {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Прижать иконку к верху */
+  align-items: flex-start;
 }
 
 .qaTitle {

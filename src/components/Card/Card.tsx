@@ -4,10 +4,10 @@ import styles from './Card.module.scss';
 interface CardProps {
    title: string;
    description: string;
-   images: string | string[]; // Define the image field as a string or an array of strings
-   setActive: (index: number | null) => void; // Add setActive function
-   index: number; // Add index
-   activeIndex: number | null; // Add activeIndex
+   images: string | string[];
+   setActive: (index: number | null) => void; 
+   index: number; 
+   activeIndex: number | null; 
 }
 
 const Card: React.FC<CardProps> = ({ title, description, images, setActive, index, activeIndex }) => {
