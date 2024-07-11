@@ -13,8 +13,6 @@ import i18n from "i18next";
 const Home: React.FC = () => {
   const ghRef = useRef<HTMLDivElement | null>(null);
   const homeRef = useRef<HTMLDivElement | null>(null);
-  const touchStartY = useRef(0);
-  const touchEndY = useRef(0);
   const { t } = useTranslation();
 
   useVhProperty();
@@ -36,44 +34,11 @@ const Home: React.FC = () => {
       }
     };
 
-    const handleTouchStart = (event: TouchEvent) => {
-      const touch = event.touches[0];
-      touchStartY.current = touch.clientY;
-    };
-
-    const handleTouchMove = (event: TouchEvent) => {
-      const touch = event.touches[0];
-      touchEndY.current = touch.clientY;
-    };
-
-    const handleTouchEnd = () => {
-      const threshold = 50; // Minimum distance for a swipe
-      if (touchStartY.current - touchEndY.current > threshold) {
-        // Swipe up
-        window.scrollTo({
-          top: document.body.scrollHeight,
-          behavior: 'smooth'
-        });
-      } else if (touchEndY.current - touchStartY.current > threshold) {
-        // Swipe down
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
-      }
-    };
-
     const homeElement = homeRef.current;
     homeElement?.addEventListener('wheel', handleScroll);
-    homeElement?.addEventListener('touchstart', handleTouchStart);
-    homeElement?.addEventListener('touchmove', handleTouchMove);
-    homeElement?.addEventListener('touchend', handleTouchEnd);
 
     return () => {
       homeElement?.removeEventListener('wheel', handleScroll);
-      homeElement?.removeEventListener('touchstart', handleTouchStart);
-      homeElement?.removeEventListener('touchmove', handleTouchMove);
-      homeElement?.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 
