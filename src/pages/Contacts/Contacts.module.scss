@@ -80,6 +80,10 @@
         grid-column: span 2;
       }
     }
+
+    @media (max-height: 767px) and (orientation: landscape) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__title {

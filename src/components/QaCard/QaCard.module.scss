@@ -15,6 +15,10 @@
   @media (max-width: 768px) {
     font-size: 16px;
   }
+
+  @media (max-height: 767px) and (orientation: landscape) {
+    font-size: 14px;
+  }
 }
 
 .qaBlock {
@@ -28,6 +32,10 @@
   flex: 1;
   color: $white;
   font-weight: 500;
+
+  @media (max-height: 767px) and (orientation: landscape) {
+    font-size: 14px;
+  }
 }
 
 .icon img {

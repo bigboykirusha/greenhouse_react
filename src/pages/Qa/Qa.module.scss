@@ -25,6 +25,12 @@
 
       margin: 20px 0;
     }
+
+    @media (max-height: 767px) and (orientation: landscape) {
+      font-size: 24px;
+      margin: 10px 0;
+      padding-top: 0;
+    }
   }
 
   &__cardsContainer {

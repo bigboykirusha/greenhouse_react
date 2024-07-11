@@ -47,6 +47,11 @@
       flex: 0;
       padding-top: 60px;
     }
+
+    @media (max-height: 767px) and (orientation: landscape) {
+      padding-top: 10px;
+      flex: 2;
+    }
   }
 
   &__logocontainer {
@@ -109,6 +114,11 @@
     @media (max-width: 481px) {
       font-size: 40px;
     }
+
+    @media (max-height: 767px) and (orientation: landscape) {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
   }
 
   &__subtitle {
@@ -127,6 +137,10 @@
 
     @media (max-width: 991px) {
       font-size: 18px;
+    }
+    
+    @media (max-height: 767px) and (orientation: landscape) {
+      font-size: 15px;
     }
   }
 }

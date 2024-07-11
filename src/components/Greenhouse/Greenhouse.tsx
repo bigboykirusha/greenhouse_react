@@ -71,20 +71,28 @@ const Greenhouse: React.FC = () => {
       if (cachedAnimationData) {
         setAnimationData(cachedAnimationData);
       } else {
-        import("../../assets/animation/data4.json")
-          .then(data => {
-            db.put('animations', data.default, 'data4');
-            setAnimationData(data.default);
-          })
-          .catch(err => console.error("Failed to load animation data", err));
+        const animationData = await import("../../assets/animation/data4.json");
+        db.put('animations', animationData.default, 'data4');
+        setAnimationData(animationData.default);
       }
     };
 
-    loadAnimationData();
+    const handleScroll = () => {
+      if (animationContainerRef.current && window.scrollY + window.innerHeight >= animationContainerRef.current.offsetTop) {
+        loadAnimationData();
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   useEffect(() => {
-    if (animationContainerRef) {
+    if (animationData && animationContainerRef.current) {
       Lottie.loadAnimation({
         container: animationContainerRef.current!,
         renderer: "svg",
@@ -93,7 +101,7 @@ const Greenhouse: React.FC = () => {
         animationData: animationData,
         rendererSettings: {
           progressiveLoad: true,
-          preserveAspectRatio: 'xMidYMid meet', 
+          preserveAspectRatio: 'xMidYMid meet',
           hideOnTransparent: true
         }
       });

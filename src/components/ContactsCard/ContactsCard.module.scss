@@ -8,6 +8,8 @@
   text-align: left;
   transition: all 0.3s ease-in-out;
 
+  
+
   p {
     opacity: 0.7;
     a {
@@ -46,6 +48,13 @@
     h2,
     p {
       font-size: 11px;
+    }
+  }
+
+  @media (max-height: 767px) and (orientation: landscape) {
+    h2,
+    p {
+      font-size: 10px;
     }
   }
 }
