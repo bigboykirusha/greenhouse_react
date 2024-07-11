@@ -12,7 +12,8 @@ import i18n from "i18next";
 
 const Home: React.FC = () => {
   const ghRef = useRef<HTMLDivElement | null>(null);
-  const homeRef = useRef<HTMLDivElement | null>(null);
+  const touchStartY = useRef(0);
+  const touchEndY = useRef(0);
   const { t } = useTranslation();
 
   useVhProperty();
@@ -21,8 +22,7 @@ const Home: React.FC = () => {
     const handleScroll = (event: WheelEvent) => {
       if (event.deltaY > 0) {
         // Scroll down
-        window.scrollTo({
-          top: document.body.scrollHeight,
+        ghRef.current?.scrollIntoView({
           behavior: 'smooth'
         });
       } else {
@@ -34,16 +34,47 @@ const Home: React.FC = () => {
       }
     };
 
-    const homeElement = homeRef.current;
-    homeElement?.addEventListener('wheel', handleScroll);
+    const handleTouchStart = (event: TouchEvent) => {
+      const touch = event.touches[0];
+      touchStartY.current = touch.clientY;
+    };
+
+    const handleTouchMove = (event: TouchEvent) => {
+      const touch = event.touches[0];
+      touchEndY.current = touch.clientY;
+    };
+
+    const handleTouchEnd = () => {
+      const threshold = 50; // Minimum distance for a swipe
+      if (touchStartY.current - touchEndY.current > threshold) {
+        // Swipe up
+        ghRef.current?.scrollIntoView({
+          behavior: 'smooth'
+        });
+      } else if (touchEndY.current - touchStartY.current > threshold) {
+        // Swipe down
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+    };
+
+    window.addEventListener('wheel', handleScroll);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchmove', handleTouchMove);
+    window.addEventListener('touchend', handleTouchEnd);
 
     return () => {
-      homeElement?.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('wheel', handleScroll);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
 
   return (
-    <div ref={homeRef} className={styles.root}>
+    <div className={styles.root}>
       <div className={styles.home}>
         <div className={styles.home__main}>
           <div className={styles.home__section}>
